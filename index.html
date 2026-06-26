@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <link rel="icon" type="image/x-icon" href="ICON.ico">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض نيو لايف للأدوات المنزلية</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="hints-container">
+    <div class="hint-note">💡 اضغط على أي صورة لتكبيرها وعرض تفاصيل المنتج</div>
+    <div class="hint-note">💡 إذا لم تجد الصنف الذي تبحث عنه يمكنك إرسال رسالة تلقائية لإدارة الشركة من أسفل الموقع</div>
+</div>
+
+
+    <nav class="navbar">
+        <div id="navTotalReviews" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255, 204, 0, 0.1); padding: 5px 10px; border-radius: 20px; font-size: 0.9rem; color: #333; font-weight: bold; direction: rtl;">
+
+
+
+
+
+    <span>جاري التحميل...</span>
+</div>
+<!-- في الناف بار -->
+<div id="navTotalReviews" class="rating-badge">
+    <i class="fas fa-star"></i>
+    <span id="ratingValue">...</span>
+</div>
+        <div class="logo-container">
+            
+
+
+            <!-- استبدل النص NL بهذا الكود -->
+            <div class="circular-logo">
+                <img src="Gemini_Generated_Image_n11h5bn11h5bn11h.png" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+            <div class="brand-info">
+                <span class="brand-name">نيو لايف</span>
+                <span class="brand-sub">سجين الكوم</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">الرئيسية</a></li>
+            <li><a href="#group-kitchen">مجموعة الرفايع</a></li>
+            <li><a href="#group-plastics">البلاستيكات</a></li>
+            <li><a href="#group-glass">الزجاج و الخزف </a></li>
+            <li><a href="#group-distribution">أطقم التوزيع و الحوافظ و الترامس </a></li>
+            <li><a href="#group-sets">الأطقم الفاخرة</a></li>
+            <li><a href="#group-appliances">الأجهزة</a></li>
+        </ul>
+        <div>
+        <button class="nav-btn" onclick="var m = document.getElementById('contactMenu'); m.style.display = (m.style.display === 'none') ? 'block' : 'none';">
+    تواصل معنا <i class="fab fa-whatsapp"></i>
+</button>
+
+            <div id="contactMenu" class="contact-popover" style="display: none;">
+    <p>اختر رقم التواصل عبر الواتساب:</p>
+    <a href="https://wa.me/201091076268" target="_blank" class="popover-link"><i class="fab fa-whatsapp"></i> خدمة العملاء (1)</a>
+    <a href="https://wa.me/201223069369" target="_blank" class="popover-link red-link"><i class="fab fa-whatsapp"></i> إدارة المبيعات (2)</a>
+</div>
+        </div>
+
+
+
+
+
+
+
+<button class="nav-btn" onclick="toggleAbout()">عن الشركة</button>
+
+<div id="aboutContainer" class="about-modal" style="display: none;">
+    <div class="about-content">
+        <button class="close-btn" onclick="toggleAbout()">×</button>
+        <h2>معرض نيو لايف</h2>
+        <p>نحن نبتكر لراحتك. متخصصون في توفير أفضل الأدوات المنزلية التي تجمع بين الأناقة والعملية.</p>
+        <hr>
+        <h3>عن المؤسس(حسام رضوان )</h3>
+        <p>رجل العمل والشغف، صاحب الرؤية التي جعلت "نيو لايف" حقيقة. نؤمن بأن كل قطعة منزلية هي استثمار في سعادة العائلة.</p>
+    </div>
+</div>
+
+
+
+
+<div class="social-links-section">
+    <h3>تابعنا على منصاتنا</h3>
+    <div class="social-grid">
+        <a href="https://www.facebook.com/profile.php?id=100065208172370" target="_blank" class="social-item"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/@new.life992009" target="_blank" class="social-item"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@New_life2009" target="_blank" class="social-item"><i class="fab fa-youtube"></i></a>
+        <a href="https://maps.app.goo.gl/BSCErd2SW2LLm1Qt8" target="_blank" class="social-item google-map"><i class="fas fa-map-marker-alt"></i></a>
+    </div>
+</div>
+</button>
+
+    </nav>
+
+<div class="update-notice">
+    <i class="fas fa-sync-alt"></i> 
+    <span>يتم تحديث المتجر الإلكتروني وتجديد العروض في يوم 1 من كل شهر ميلادي.</span>
+</div>
+
+
+    <header id="home" class="hero">
+        <div class="hero-overlay">
+            <h1>مرحباً بكم في معرض نيو لايف</h1>
+            <p>تصفح المجموعات والأقسام، واضغط على زر الشراء للاستفسار وتأكيد الطلب عبر الواتساب فوراً</p>
+        </div>
+
+    </header>
+
+    <div class="container">
+
+        <section id="group-kitchen" class="main-group">
+            <h2 class="group-title"><i class="fas fa-utensils"></i> مجموعة الرفايع والمطبخ</h2>
+            
+                <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">جديد</span>
+                    <img src="data:image/webp;base64,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" alt="منظمات مطبخ">
+                    <h3>جونتى مطبخ مبطن لوكس</h3>
+                    <p> جونتي حراري يمنع حراره الاواني الساخنه من الوصول الي اليد ذلك لانه مصنوع من مواد عازله للحراره بنسبه 100%</p>
+                    <button class="buy-btn" onclick="orderProduct('جونتى مطبخ مبطن لوكس')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+              <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">ترند</span>
+                    <img src="https://inhouuse.com/cdn/shop/files/C410EB22-FB78-464D-B83E-070D5E928553.jpg?v=1721311948&width=1445" alt="حله">
+                    <h3>حله بطوط 3 لتر</h3>
+                    <p> حلة تحمير عميقة بلمسات صفراء ومقبضين جانبيين، مناسبة للاستخدام المنزلي و حلة تحمير عميقة بلمسات صفراء ومقبضين جانبيين، مناسبة للاستخدام المنزلي و يمكن استخدامها على أنواع مواقد مختلفة، بما في ذلك مواقد الغاز والمواقد الكهربائية ومواقد الحث مستني ايه اطلبها يالا 🔥🔥🔥</p>
+                    <button class="buy-btn" onclick="orderProduct('حله بطوط 3 لتر')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+                              <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">ترند</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdcHZka5gyLOKV6GU-McCpUvxYE-5aVNR4PnFmAMcN_A&s" alt="حله">
+                    <h3>حله اندومي بيركس </h3>
+                    <p> تعتبر حلة الإندومي البايركس الزجاجية الخيار المثالي لعشاق النودلز والشوربة الساخنة حيث تتيح لك طهي وجبتك المفضلة مباشرة على مواقد الغاز أو الكهرباء بفضل صناعتها المتينة من زجاج البوروسيليكت المقاوم للحرارة العالية كما يتميز تصميمها الشفاف بمقابض مريحة وغطاء محكم يسمح بمتابعة نضج الطعام بوضوح مما يجعلها قطعة عملية وأنيقة تجمع بين الطهي والتقديم المباشر على مائدتك بكل سهولة 🍜.</p>
+                    <button class="buy-btn" onclick="orderProduct('حله اندومي بيركس بغطاء دب ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+              <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">ترند</span>
+                    <img src="https://inhouuse.com/cdn/shop/files/F92AEDB1-2A4E-47F1-B4D6-3F233598F164.jpg?v=1723570973" alt="حله">
+                    <h3>حله ضغط بطوط </h3>
+                    <p> حلة ضغط بطوط (أو حلة بطوط السريعة) هي واحدة من أشهر أواني الطهي التي انتشرت بشكل واسع كـ "تريند" في الأسواق المصرية. تتميز بتصميمها ولونها الأصفر الجذاب الشبيه ببطوط، وتُصنف كحلة سريعة التحضير تعمل بآلية شبيهة بحلة الضغط المصغرة بفضل إحكام غلقه و تأتي غالباً بسعة 3.5 لتر (مقاس 22 سم)، وتتوفر منها أحياناً سعة أكبر تصل إلى 5 لتر و مبطنة بطبقة من الجرانيت الأسود المنقط (أو التيفال) المقاوم للالتصاق وسهل التنظيف.</p>
+                    <button class="buy-btn" onclick="orderProduct('حله ضغط بطوط ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+                
+              <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">ترند جديد </span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaHYLaRvh4kxSUAVioWDudUrXU25NZXb-Amd0miRlXlo1TeDULdlPUsVw&s=10" alt="حله">
+                    <h3>طقم بلانشه سميج </h3>
+                    <p> يتميز طقم بلانشات تقطيع سميج بتصميم عصري يجمع بين الكفاءة العملية واللمسة الجمالية الفاخرة حيث يتوفر بإصدارين يلبيان كافة احتياجات المطبخ الحديث وأولهما الطقم البلاستيكي الملون المكون من ثلاثة ألواح بمقاسات مختلفة مع حامل مدمج يسهل تنظيمها ويمنع تلوث الأطعمة عبر تخصيص كل لون لنوع معين من المأكولات كالخضروات أو اللحوم بينما يأتي الإصدار الثاني مصنعا من خشب الأكاسيا الطبيعي الصلب المقاوم للبكتيريا والرطوبة ليتناغم بشكل مثالي مع أجهزة سميج الكلاسيكية الفخمة ويضمن تجربة تقطيع مريحة وآمنة تدوم لسنوات طويلة دون التأثير على حدة السكاكين المطبخية.</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم بلانشه سميج ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+                
+
+                              <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">ترند جديد </span>
+                    <img src="https://m.media-amazon.com/images/I/61mbxWFbEZL.jpg" alt="زياته ">
+                    <h3>طقم زجاجات زيت عصرية لطاولة المطبخ</h3>
+                    <p> اضف لمسة من الفخامة العصرية الى مائدتك مع طقم زياتة الزيت والخل الزجاجي المزدوج المصمم خصيصا لعشاق الاناقة والترتيب في المطبخ يتميز الطقم بزجاجتين من البايركس النقي المقاوم للصدمات والحرارة مع تصميم مضلع ساحر يتيح لك رؤية المكونات بوضوح تام وتأتي الزجاجات محملة على قاعدة خشبية فاخرة مصنوعة من خشب البامبو الطبيعي المقاوم للرطوبة لتمنحك سهولة فائقة في النقل والتقديم مباشرة الى طاولة الطعام مع سدادات فلين محكمة تضمن الحفاظ على نكهة الزيت والخل طازجة لاطول فترة ممكنة دون اي تسريب اجعل تجربة الطهي والتقديم اكثر متعة واطلب طقمك الان ليكون القطعة الاجمل في مطبخك.</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم زجاجات زيت عصرية لطاولة المطبخ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+                              <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">كلاسيكيه </span>
+                    <img src="https://images-na.ssl-images-amazon.com/images/I/416YA2KuIwL._SL500_._AC_UL160_SR160,160_.jpg" alt="سبرتايه ">
+                    <h3>سبرتايه كوكا </h3>
+                    <p>سبرتاية كوكا (Koka) هي واحدة من أشهر أنواع السبرتايات النحاسية الكلاسيكية المستخدمة لإعداد القهوة التركية على نار هادئة، وتتميز بتصميمها التقليدي الأنيق وجودة خاماتها المصنوعة من النحاس  .</p>
+                    <button class="buy-btn" onclick="orderProduct('سبرتايه كوكا')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+                
+               
+                              <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/41FWhwqldTL._SX342_SY445_QL70_ML2_.jpg" alt="ميزان ">
+                    <h3>ميزان مطبخ حساس مربع </h3>
+                    <p>ميزان المطبخ الديجيتال الحساس ذو التصميم المربع هو أداة مثالية لتوفير مساحة أكبر لوزن الأطباق والمكونات الكبيرة بدقة عالية تبدأ من 0.1 جرام وتصل إلى 10 كيلوجرام </p>
+                    <button class="buy-btn" onclick="orderProduct('ميزان مطبخ حساس مربع ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div> 
+                              <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStmYtJXIgzgQEJzH9PqHdVsYLcVBB34xi0iYdJ9VGykg&s=10" alt="ميزان ">
+                    <h3>ميزان مطبخ بمؤشر</h3>
+                    <p>ميزان مطبخ الباشا يعتبر أحد الخيارات التقليدية المميزة للمنازل ومحلات البقالة حيث يعتمد على نظام ميكانيكي كلاسيكي بمؤشر وعقارب وبدون الحاجة لبطاريات مما يضمن استمرارية عمله في أي وقت ويتميز هذا الميزان بقدرة عالية على تحمل الأوزان الثقيلة تصل إلى عشرة كيلوجرامات مع كفة علوية واسعة ومريحة تتيح وضع الأطعمة والمكونات الكبيرة بكل سهولة وتأتي هذه الموازين بتصميمات عملية وخامات قوية وألوان متنوعة تلائم ديكورات المطابخ المختلفة مما يجعله أداة عملية واقتصادية تجمع بين المتانة وسهولة الاستخدام لفترات طويلة</p>
+                    <button class="buy-btn" onclick="orderProduct('ميزان مطبخ كفه')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+             <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/51SQCv982AL.jpg" alt="مقلايه">
+                    <h3>مقلايه بابيليا 30 سم</h3>
+                    <p>كلامك: مقلايه بابيليا 30 سممقلاة بابيلا (Papilla) التركية مقاس 30 سم هي مقلاة طهي واسعة وعالية الجودة، تصنعها شركة بابيلا الشهيرة في تركيا وتتميز بطبقاتها المانعة للالتصاق التي تسهل الطهي اليومي السريع.تتوفر هذه المقلاة في الأسواق بعدة إصدارات وتصاميم لتناسب احتياجات المطبخ المختلفة، وإليك أبرز أنواعها ومواصفاتها:الأنواع والإصدارات المتاحة بمقاس 30 سممقلاة بابيلا ويلما (Papilla Wilma 30cm):تأتي بخامة الجرانيت التركي عالي الجودة والمانع للالتصاق.تتوفر بألوان متعددة مثل الأسود المنقط والبيج.مزودة بمقبض عازل للحرارة مصنوع من الباكليت لتوفير قبضة آمنة ومريحة.مقلاة بابيلا فريد / ماكسي (Papilla Fred / Maxi 30cm):مصممة خصيصاً للاستخدام على مواقد الغاز.تتميز بتوزيع حراري ممتاز وهيكل خارجي متين.تتوفر باللون الرمادي والألوان المتعددة (Multicolor).مقلاة بابيلا المقسمة (إصدار خاص):تأتي مقسمة من الداخل إلى نصفين لتتيح لكِ طهي صنفين من الطعام في نفس الوقت.مصنوعة من التيفال التركي غير اللاصق لمنع اختلاط الأطعمة.المميزات العامة لمقلاة بابيلاسطح آمن وغير لاصق: يمنع التصاق المأكولات ويسمح بالطهي الصحي باستخدام كميات قليلة من الزيوت.سهولة التنظيف: يمكن غسلها يدوياً بسهولة أو وضعها في غسالة الأطباق بأمان وفقاً لتعليمات الشركة المصنعة.خامات صحية: الهيكل مصنوع من الألومنيوم النقي الموزع للحرارة ومطلي بطبقات جرانيت أو تيفال خالية من المواد الضارة.هل تبحثين عن سعر المقلاة الحالي في المتاجر الإلكترونية، أم ترغبين في معرفة أماكن توفرها لشراء قطعتكِ؟‫11 موقعًا إلكترونيًابابيلا مقلاة ، 30 سم ، المنيوم ، اسود : Amazon.eg - أمازون مصرمواد, الألومنيوم. تعليمات العناية بالمنتج, غسيل يدوي فقط. التعامل مع المواد, باكليت. بها طلاء غير لاصق, نعم. هل يمكن غسل هذا العنص...Amazon.egمقلاية جرانيت تركي بابيلا مقاس 30 سم ويلما لون اسودمقلاية جرانيت تركي بابيلا مقاس 30 سم ويلما لون اسود. galaxy. الأدوات المنزلية اطقم الجرانيت. موديل: Papilla Turkish Granite Frying...El-Iraqi Companyقلاية بارولي الجرانيت الفاخرة 30 سم لون أسود منقط – مقلاة مانعة ...الاستخدامات: تحضير البيض والأومليت بسهولة. قلي وتحضير الخضروات والوجبات السريعة. مناسبة للطهي اليومي للعائلات والأفراد. مثالية لتح...عالم الهزازيعرض الكلكلامك: هات صوره ليهاإليكِ صور الإصدارات المختلفة من مقلاة بابيلا التركية مقاس 30 سم؛ حيث تظهر في الصور تصاميمها المتنوعة وسطحها المانع للالتصاق:الصورة الأولى والثانية: توضح مقلاة الجرانيت باللونين الأسود والرمادي المنقط (إصدارات ويلما وفريد).الصورة الثالثة: توضح الإصدار الملون (Multicolor) ذو الهيكل الخارجي الأحمر.الصورة الرابعة: توضح المقلاة باللون البيج الناعم.إذا كنتِ ترغبين في شراء أحد هذه الموديلات، هل تفضلين معرفة أسعارها الحالية في الأسواق أم تبحثين عن روابط مباشرة للشراء؟كلامك: هات فقره عنها بدون علامات ترقيمتعد مقلاة بابيلا التركية مقاس ثلاثين سنتيمترا خيارا مثاليا للمطابخ العصرية بفضل حجمها الواسع وهيكلها المصنوع من الألومنيوم النقي الذي يضمن توزيعا ممتازا ومتساويا للحرارة وتتميز هذه المقلاة بطبقة طلاء داخلية غير لاصقة من الجرانيت أو التيفال تتيح طهي الطعام الصحي بكميات قليلة من الزيوت وتمنع التصاق المأكولات مما يجعل عملية تنظيفها سهلة للغاية كما أنها مزودة بمقبض عازل للحرارة يوفر قبضة آمنة ومريحة أثناء الاستخدام وتتوفر بألوان متعددة تناسب جميع الأذواق ومختلف أنواع الديكورات</p>
+                    <button class="buy-btn" onclick="orderProduct('مقلايه بابيليا 30 سم ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div> 
+
+
+            </div>
+        </section>
+
+
+             
+            
+
+
+        <section id="group-plastics" class="main-group">
+            <h2 class="group-title"><i class="fas fa-box-open"></i> مجموعة البلاستيكات</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+
+
+
+     
+
+                    <img src="https://m.media-amazon.com/images/I/719K84rBfLL._AC_SX300_SY300_QL70_ML2_.jpg" alt="دولاب">
+                    <h3>دولاب ميني ايليت 4 دور الوطنيه</h3>
+                    <p>دولاب بلاستيك مصنوع من مواد بلاستيكيه قويه من شركه الوطنيه</p>
+                    <button class="buy-btn" onclick="orderProduct('دولاب ميني ايليت 4 دور الوطنيه')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://elghazawy.b-cdn.net/254706/dolab-nofa-alotny-3-dor-blastyk-aloan-mtaadd.webp" alt="دولاب">
+                    <h3>دولاب نوفا الوطنيه </h3>
+                    <p>دولاب بلاستيك مصنوع من مواد بلاستيكيه قويه من شركه الوطنيه</p>
+                    <button class="buy-btn" onclick="orderProduct('دولاب نوفا الوطنيه')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+            </div>
+ 
+                      <div class="products-grid">
+                <div class="product-card">
+                    <img src="Gemini_Generated_Image_wopztjwopztjwopz.png">
+                    <h3>كولمن تانك 16 لتر الاصلي </h3>
+                    <p>الكولمن التانك الشهير بقدرته العاليه عالى الحفاظ علي بروده المياه لمده تصل ل 6 ساعات ❄️❄️❄️</p>
+                    <button class="buy-btn" onclick="orderProduct('كولمن تانك 16 لتر ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                              <div class="product-card">
+                    <img src="E.png">
+                    <h3>كولمن تانك 12 لتر الاصلي </h3>
+                    <p>الكولمن التانك الشهير بقدرته العاليه عالى الحفاظ علي بروده المياه لمده تصل ل 6 ساعات ❄️❄️❄️</p>
+                    <button class="buy-btn" onclick="orderProduct('كولمن تانك 12 لتر ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+            
+
+            
+                        <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">جديد</span>
+                    <img src="https://evaleltorkey.com/wp-content/uploads/2024/02/WhatsApp-Image-2024-02-15-at-1.37.34-PM.jpeg" alt="منظمات مطبخ">
+                    <h3>منظم ثلاجه الوطنيه </h3>
+                    <p>منظم ثلاجه 2 لون الوطنيه </p>
+                    <button class="buy-btn" onclick="orderProduct('طقم منظمات الثلاجة والمطبخ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+            </div>
+
+                        <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">جديد</span>
+                    <img src="https://www.raneen.com/media/catalog/product/d/s/dsc03624_k4s1mabbmqtxvznr.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700" alt="مطبقيه">
+                    <h3>مطبقية أرابيسك وطنية 2دور</h3>
+                    <p>"قولي وداعاً لكركبة المطبخ وزحمة الرخامة! ✨مع مطبقية أرابيسك 2 دور من الوطنية، هتحولي مطبخك لقطعة فنية منظمة. تصميمها الأنيق المستوحى من فن الأرابيسك مش بس هيشيل كل أطباقك وكوباياتك في مكان واحد، دي كمان مجهزة بصينية ذكية لتجميع المية عشان تحافظي على نظافة ولمعان رخامتك طول اليوم. متانة البلاستيك البيور والألوان المودرن اللي بتليق على أي مطبخ.. استثمري في راحتك وخلي مطبخك دايماً يشرفك!"</p>
+                    <button class="buy-btn" onclick="orderProduct('مطبقية أرابيسك وطنية 2دور')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+            </div>
+
+
+
+                                                       <div class="product-card">
+                    <img src="data:image/jpeg;base64,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">
+                    <h3>طقم باسكت تاتش سارة</h3>
+                    <p>"مين قال إن باسكت البيت لازم يتدارى؟ 😉 طقم باسكت تاتش (سارة بلاست) المكون من 3 قطع مش مجرد سلة مهملات، ده قطعة ديكور مودرن بتكمل شياكة بيتك! ✨ بلمسة واحدة (تاتش) هيفتح معاكي، وبتصميمه الاسكندنافي بالأرجل الخشبية والغطاء الخشبي الأنيق هينور الريسبشن، الليفينج، أو غرفتك. الطقم بيجيلك 3 مقاسات عشان يغطي كل احتياجات البيت، مع ميزة إخفاء كيس القمامة بالكامل للحفاظ على المظهر الجمالي. اطلبيه دلوقتي وخلي كل ركن في بيتك بيتكلم شياكة! 🌸"</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم باسكت تاتش سارة')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+  
+
+
+
+                                   <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">جديد</span>
+                    <img src="https://egmoll.com/uploads/112/%D8%AA%D8%B1%D8%A7%D8%A8%D9%8A%D8%B2%D9%87-%D8%A8%D8%B1%D9%86%D8%B3%D9%8A%D8%B3%D9%87-%D9%85%D8%AF%D9%88%D8%B1%D9%87-%D8%B1%D8%A7%D8%AA%D8%A7%D9%86-%D8%AE%D9%88%D8%B1%D8%B4%D9%8A%D8%AF.webp" alt="ترابيزه">
+                    <h3>ترابيزه البرنسيسه مدوره خورشيد</h3>
+                    <p>"الراحة والأناقة في منتج واحد.. ترابيزة البرنسيسة المدورة من خورشيد! ☕️🌸الحل السحري لكل المساحات الضيقة! ترابيزة بتصميم مودرن بنقشة الراتان الشيك اللي بتليق في أي مكان. ميزتها الكبرى إنها قابلة للطي بالكامل؛ يعني تقدري تفتحيها وقت الاستخدام وتلميها في ثواني وتخزنيها ورا الباب أو في أي ركن بدون ما تاخد مساحة. مثالية للبلكونة، جنينة البيت، أو حتى تآخديها معاكي في المصايف والرحلات. خامة بلاستيك قوية تستحمل الشمس والرطوبة وسهلة التنظيف جداً!"</p>
+                    <button class="buy-btn" onclick="orderProduct('ترابيزه البرنسيسه مدوره خورشيد')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+            </div>
+                                    <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">جديد</span>
+                    <img src="https://z.nooncdn.com/products/tr:n-t_400/pzsku/Z28FC36AD4DB98A4BDA26Z/45/_/1698574994/6bb09c7a-3f5f-4ac5-b2c6-7bdb2b166066.jpg" alt="ترابيزه">
+                    <h3>كرسى مارسيليا خورشيد ابيض</h3>
+                    <p>"أقوى وأشيك كرسي في مصر.. مارسيليا خورشيد الأبيض! 🤍💪متانة خورشيد المعروفة بتجتمع مع أرقى تصميم عصري. كرسي مارسيليا الأبيض مصنوع من أفضل خامات البلاستيك المقوى المقاوم للصدمات وعوامل الجو من شمس ورطوبة. تصميمه المفرغ الذكي بيمنع تجمع المياه وسهل التنظيف جداً بمسحة واحدة. وزنه خفيف لسهولة النقل، وقواعده مصممة بثبات عالي عشان يضمن لك الأمان الكامل والراحة لأي حد يقعد عليه. الاختيار الصح لراحة عيلتك وضيوفك!"</p>
+                    <button class="buy-btn" onclick="orderProduct('كرسى مارسيليا خورشيد ابيض')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+            </div>
+                     <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge red">جديد</span>
+                    <img src="https://m.media-amazon.com/images/I/71P5M4jZgTL._AC_UF894,1000_QL80_.jpg" alt="طقم">
+                    <h3>طقم عشا 47فلو وطنيه</h3>
+                    <p>"وداعاً لكسر الأطباق وبهدلة العزومات! 🍽️✨سفريتك هتنور مع طقم عشاء فلو (47 قطعة) من الوطنية، الميكس المثالي بين شياكة الأوبالين وعملية البلاستيك الصحي! طقم متكامل من أطباق الغرف، البولات، السرافيس، وحتى الكبايات بلون وتصميم "فلو" الانسيابي الفخم. مصنوع من مادة PP5 الصحية الآمنة بالكامل على عيلتك، وبيدخل الميكروويف وغسالة الأطباق بكل أمان. استمتعي بلمّة عيلتك وعزوماتك بدون قلق من الكسر وبلون ثابت يعيش العمر كله!"</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم عشا 47فلو وطنيه')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+           
+
+          </div> 
+        </section>
+
+        <section id="group-glass" class="main-group">
+            <h2 class="group-title"><i class="fas fa-glass-martini-alt"></i> مجموعة الزجاج و الخزفيات </h2>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge blue">الأكثر طلباً</span>
+                    <img src="https://m.media-amazon.com/images/I/61P25IbRS9L._AC_SX522_.jpg" alt="طقم بيركس ">
+                    <h3>طقم بيركس حراري 3ق فرنساوي</h3>
+                    <p>طقم بيركس حراري فاخر مستورد Pyrex</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم بيركس حراري 3ق فرنساوي')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+
+                        <div class="products-grid">
+                <div class="product-card">
+                    
+                    <img src="https://m.media-amazon.com/images/I/51R9VFd0t8L._AC_SY879_.jpg" alt="دورق ">
+                    <h3>طقم أوكتيم دايموند من لومينارك</h3>
+                    <p>"الجمال في بساطته.. والشياكة في تفاصيله! 😍✨جددي مائدتك مع طقم عصير وشربات لومينارك أوكتيم دايموند الفرنسي الأصلي. تصميم ثماني هندسي ساحر مع نقوش كريستالية من الأسفل بتعكس الضوء وتخلي شكل العصير يفتح النفس! 💎🍹مش بس شكل يبهر ضيوفك.. ده كمان زجاج نقاء 100% ومقاوم للصدمات يعني هيعيش معاكي للعمر كله. خطفي الأنظار في عزوماتك واطلبيه دلوقتي قبل نفاد الكمية! 🛍️"</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم أوكتيم دايموند من لومينارك')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+
+            
+                                    <div class="products-grid">
+                <div class="product-card">
+                    
+                    <img src="https://f.nooncdn.com/p/pzsku/ZD4666D52F891BCC1C732Z/45/_/1780582417/dbda9b22-db88-46cf-89f3-75db61751d62.jpg?width=800" alt="دورق ">
+                    <h3> طقم عصير لومينارك بوبي تركواز</h3>
+                    <p>"انتعاش الصيف بلمسة تركوازية ساحرة! 🩵 الراحة والبهجة هتملى سفرتك مع طقم عصير لومينارك بوبي تركواز الفرنسي الأصلي 🌟.طقم مكون من 7 قطع (دورق 1.3 لتر و6 أكواب شوب) بتصميم زهور الخشخاش الفيروزية المبهجة اللي تفتح النفس على العصائر الفريش والمشروبات الباردة. نقوش ثابتة لا تتأثر بالغسيل، وزجاج نقي صحي 100% ومقاوم للصدمات.قدمي لضيوفك وعائلتك بأسلوب راقي ويخطف العين.. اطلبيه الآن وضيفي لمسة حيوية لبيتك! 🛍️</p>
+                    <button class="buy-btn" onclick="orderProduct(' طقم عصير لومينارك بوبي تركواز')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+
+                        <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge blue">الأكثر طلباً</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRjnnS0TGU2HgJH-neMyaM9ClQA7CHDrlECwwcwYc6CA&s=10" alt="مج استانلي ">
+                    <h3>مج استانلي الاصلي </h3>
+                    <p>كوب ستانلي الموضح في الصورة هو الإصدار الأصلي الفاخر من مجموعة زهور لوف شاك فانسي الشهيرة ويتميز هذا الكوب بتصميمه الساحر الذي يجمع بين نقوش الورد الأنيقة واليد المتينة المريحة في الاستخدام اليومي مع غطاء فلو ستيت المحكم تماما لمنع التسريب وحفظ حرارة وبرودة المشروبات لساعات طويلة حيث يحمل الشعار الرسمي المحفور بدقة ليعكس الجودة العالية لشركة ستانلي العالمية التي تقدم أفضل خامات الستانلس ستيل المقاوم للصدأ والصحي تماما للاستخدام المتكرر</p>
+                    <button class="buy-btn" onclick="orderProduct('مج استانلي الاصلي ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+                       <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge blue">من الاكثر جمالا</span>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_Vopf04rJSVZpcjZuKPXr0SvRHYmEqdB3x2V0rtEBBw&s=10" alt="مج  ايس كوفي ">
+                    <h3>مج ايس كوفي بحزام جلد</h3>
+                    <p> مج زجاجي حراري متنقل مصمم بشكل عصري ليناسب الاستخدام اليومي في العمل أو السفر وهو مصنوع من زجاج البوروسيليكات المقاوم للصدمات والحرارة ويأتي محاطا بحافظة جلدية أنيقة توفر عازلا ممتازا لحماية اليدين من السخونة وتمنع انزلاق الكوب أثناء الحركة كما يتميز بغطاء محكم الاغلاق يمنع تسرب السوائل ويحتوي على فتحتين مزدوجتين تتيحان الشرب المباشر أو استخدام الماصة الزجاجية المرفقة معه مما يجعله خيارا مثاليا ومريحا لتناول مشروبات القهوة والشاي الساخنة أو العصائر والايس كوفي الباردة في أي مكان</p>
+                    <button class="buy-btn" onclick="orderProduct('مج ايس كوفي مع حزام جلد ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+
+
+  <div class="products-grid">
+                <div class="product-card">
+                    <span class="badge blue">من الاكثر شهره </span>
+                    <img src="https://evaleltorkey.com/wp-content/uploads/2025/03/22-medium.jpg" alt="مج  ايس كوفي ">
+                    <h3>مج ايس  مربع الوان </h3>
+                    <p>مج زجاجي مربع للايس كوفي والمشروبات الباردة والساحنة يأتي بتصميم عصري شفاف يعرض طبقات مشروبك بوضوح وهو مصنوع من زجاج البوروسيليكات المقاوم للحرارة ومزود بمقبض جانبي مريح لسهولة الحمل والاستخدام كما يحتوي على غطاء طبيعي من خشب البامبو يمنع الانسكاب ويحافظ على الحرارة مع فتحة مخصصة لشاليموه زجاجي شفاف يكمل المظهر الأنيق للمج مما يجعله قطعة مثالية للاستخدام اليومي في المنزل أو المكتب لتقديم اللاتيه والعصائر والسموثي بشكل جذاب ومميز</p>
+                    <button class="buy-btn" onclick="orderProduct('مج ايس كوفي مربع الوان ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+            </div>
+
+              <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCXoAWASBNmhq-rLPVo7XKqv82l07JqsuryHH9O0adDg&s=10" alt="مج  ايس كوفي ">
+                    <h3>مج يحتوي علي ورد مجفف </h3>
+                    <p>يتميز هذا المج الزجاجي مزدوج الجدار بورود مجففة ملونة بين طبقتيه مع قدرة فائقة على عزل حرارة المشروبات الساخنة والباردة لفترات طويلة وحماية اليدين يمثل هذا المنتج تحفة فنية عملية تجمع بين التصميم الجمالي والوظيفة المثالية لتقديم الهدايا الأنيقة أو لاقتناء عشاق القهوة الفريدة</p>
+                    <button class="buy-btn" onclick="orderProduct('مج ايس كوفي مربع الوان ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+
+
+
+            </div>
+
+        </section>
+
+        <section id="group-distribution" class="main-group">
+            <h2 class="group-title"><i class="fas fa-bread-slice"></i> مجموعة أطقم التوزيع و الحوافظ و الترامس </h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSq5TON8pfyduZNe66pzZmiD5jbnjplVeQcC3dV0FyeOH2c8F0sd0N057WX&s=10" alt="أدوات توزيع">
+                    <h3>طقم توزيع سيليكون ارشا </h3>
+                    <p>طقم توزيع سيليكون أرشيا 7 قطع باللون الأسود يأتي مع حامل سلكي عملي للتخزين و  مصنوع من سيليكون حراري عالي الجودة يتحمل درجات حرارة تصل إلى 210 درجة مئوية و مصمم خصيصًا ليكون آمنا على الأواني غير اللاصقة (التيفال) ولا يسبب خدوشًا لها</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم توزيع سيليكون ارشا ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+
+                <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/51CugKiN4mL._AC_UF350,350_QL80_.jpg" alt="أدوات توزيع">
+                    <h3>طقم توزيع سيليكون  الاندلس</h3>
+                    <p> المزيج بين اللون الرمادي (الجرانيتي) المطفي مع اللمسات الميتاليك باللون الروز جولد (Rose Gold) يمنحه مظهراً ملكياً يناسب العرايس والمطابخ الحديثة و  تلتف فيه الأدوات بشكل عمودي مدمج حول حامل مركزي دوّار، مما يوفر مساحة كبيرة على الرخامة ويحمي رؤوس الأدوات من الأتربة، وفي نفس الوقت يسهل لفه للوصول للقطعة المطلوبة بلمسة واحدة</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم توزيع سيليكون الاندلس')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+            
+                <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9rCjKz0MaorAtZ5tfrDqG4DwFVfZGR7tvxECfOiwQZQ&s=10" alt="حافظ ">
+                    <h3>حافظ طعام خشبي الاندلس </h3>
+                    <p>حافظة طعام الأندلس الحرارية تمثل الحل المثالي لكل من يبحث عن وسيلة عملية وأنيقة لنقل الوجبات اليومية بفضل تصميمها الكلاسيكي الفريد الذي يحاكي مظهر الخشب الطبيعي وجاذبيته وتتكون هذه الحافظة من ثلاثة أدوار منفصلة تتيح لك ترتيب أنواع مختلفة من الأطعمة وفصلها تماما لضمان عدم اختلاط النكهات أو الروائح وتتميز بهيكل داخلي مصنوع بالكامل من الستانلس ستيل الصحي المقاوم للصدأ مما يضمن سلامة الغذاء ويسهل عملية التنظيف بشكل كبير بالإضافة إلى وجود جدار عازل فائق الجودة يحافظ على برودة وسخونة المأكولات لساعات طويلة لتستمتع بوجبة طازجة في أي مكان وتكتمل مزاياها بمقبض علوي متين يوفر راحة تامة أثناء الحمل والنقل مما يجعلها الرفيق الممتاز في الرحلات والنزهات والعمل</p>
+                    <button class="buy-btn" onclick="orderProduct('حافظ طعام خشبي الاندلس ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0TiGoGg-yt4CH7PcRGWrAXDbOw6QnDzQWZ9I7Nkw0vQ&s=10" alt="حافظ ">
+                    <h3>حافظ طعام + شنطه مستورد </h3>
+                    <p>تذوق وجبتك كأنها طازجة من مطبخك في أي وقت وأي مكان 🎒🍱</p>
+                    <button class="buy-btn" onclick="orderProduct('حافظ طعام  بالشنطه ابيض ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt9VWpas9XJLNaTUspup1LTZ2aFmT405iaxrtt9LgZDn3FQt4y3sIVksU&s=10" alt="حافظ ">
+                    <h3>حافظ طعام فرداني مستورد </h3>
+                    <p>تذوق وجبتك كأنها طازجة من مطبخك في أي وقت وأي مكان 🎒🍱</p>
+                    <button class="buy-btn" onclick="orderProduct('حافظ طعام  فرداني مستورد ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+
+
+          <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/515Hx-4jSOL._AC_SY879_.jpg" alt="ترمس ">
+                    <h3>ترمس  al amer </h3>
+                    <p>لأصحاب الذوق الرفيع.. ستايل مودرن بمقبض خشب طبيعي يجمع بين الفخامة والبساطة.</p>
+                    <button class="buy-btn" onclick="orderProduct('ترمس al amer')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+                
+                          <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/519THKqznBL._AC_SY879_.jpg" alt="ترمس ">
+                    <h3>ترمس السيف الذهبي </h3>
+                    <p>لأصحاب الذوق الرفيع لا يحتاج وصف .</p>
+                    <button class="buy-btn" onclick="orderProduct('ترمس السيف الذهبي ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+                </div>
+                
+        </section>
+
+        <section id="group-sets" class="main-group">
+            <h2 class="group-title"><i class="fas fa-wine-glass"></i> مجموعة الأطقم الفاخرة</h2>
+  
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://www.raneen.com/media/catalog/product/h/o/ho1062938slv_ipx2b5jx5y6mhjuq.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700" alt="طقم استانلس ">
+                    <h3>طقم استانلس عبود اوليندا 10 قطع </h3>
+                    <p>يعد طقم حلل استانلس عبود أوليندا المكون من عشر قطع خيارا ممتازا للمطبخ لأنه مصنوع من الاستانلس ستيل النقي عيار ثمانية عشر على عشرة المقاوم للصدأ والتآكل ويمتاز هذا الطقم بقاعدة سميكة تضمن توزيعا مثاليا وعادلا للحرارة لمنع حرق الطعام وتأتي الحلل بخمسة مقاسات مختلفة تبدأ من ثمانية عشر حتى ثمانية وعشرين سنتيمترا لتناسب كافة احتياجات الطهي اليومي كما أن المقابض والأغطية المصنوعة من الاستانلس بالكامل تجعله آمنا للاستخدام داخل الفرن وسهل التنظيف في غسالة الأطباق ومناسبا لجميع أنواع المواقد الحديثة والتقليدية</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم استانلس عبود اوليندا 10 قطع ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LVBwahG7XUUAbcU7XXD1iZ1zhQXU2r1MSFewufsm3JpTZfm4Mh1XTm8&s=10 "alt="طقم حلل استانلز ">
+                    <h3>طقم حلل استانلس لينز دهبي </h3>
+                    <p>هذا الطقم التركي المميز من ماركة لاينز يعتبر خيارا مثاليا لكل مطبخ عصري حيث يتكون من عشر قطع تشمل خمس حلل بأحجام متنوعة تبدأ من مقاس ثمانية عشر وتصل إلى ثمانية وعشرين سنتيمترا لتلبي كافة احتياجات الطهي اليومية وهو مصنوع من الستانلس ستيل عالي الجودة المقاوم للصدأ والتآكل مع قاعدة حرارية ثلاثية سميكة تحتوي على طبقة ألومنيوم داخلية تضمن توزيعا متوازنا للحرارة لمنع احتراق الطعام كما يتميز بتصميم فريد يجمع بين الهيكل الفضي المصقول والشريط الذهبي الأنيق والمقابض الثابتة التي تمنحه مظهرا فخما يضيف لمسة من الأناقة والجمال إلى أدوات مطبخك </p>
+                    <button class="buy-btn" onclick="orderProduct('طقم حلل استانلس لينز دهبي  ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnEFMSWaX4zEG3a04UqF5H3kh0u-0glvZ5DjaR5IEZxdBuk6FtF_mipA&s=10"alt="طقم حلل تيفال ">
+                    <h3>طقم حلل تيفال بونتي </h3>
+                    <p>هذا الطقم التركي المكون من تسع قطع يجمع بين الأناقة والعملية بفضل لونه البنفسجي المميز وتصميمه العصري الذي يناسب المطابخ الحديثة، وهو مصنوع من الألومنيوم عالي الجودة المبطن بطبقة غير لاصقة تمنع التصاق الطعام وتسهل عملية التنظيف، كما يأتي بسمك يبلغ أربعة مللي لضمان التوزيع الحراري المتساوي والاحتفاظ بالحرارة لفترة أطول أثناء الطهي، وتتنوع محتوياته لتشمل أربع حلل طهي بمقاسات مختلفة مع أغطيتها بالإضافة إلى مقلاة جريل مربعة مخططة ومزودة بمقبض طويل لشيّ اللحوم والخضروات بكفاءة.</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم حلل تيفال بونتي 9 قطع ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsFciVy8uL9uw9jakEoRUNdpIbJUHVyI3Sxe0W-NnIQA&s=10" alt="طقم حلل جيرانيت ">
+                    <h3>طقم حلل جرانيت جلوري موديل كوري </h3>
+                    <p> طقم حلل جرانيت جلوري يمنع من التصاق الطعام به مصنوع علي الموديل التركي </p>
+                    <button class="buy-btn" onclick="orderProduct('طقم حلل جيرانيت جلوري موديل كوري')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://beetelhaga.com/wp-content/uploads/2025/02/IMG-20250225-WA0027.jpg" alt="طقم حلل جيرانيت ">
+                    <h3>طقم حلل جرانيتecoten </h3>
+                    <p>جمال مطبخك يبدأ من شياكة حللك ✨🛒جددي مطبخك أو جهزي بيتك بأجمل طقم جرانيت تركي أصلي من إيكوتن باللون البني الغامق البرونزي الساحر 🤎 طقم 9 قطع متكامل يجمع بين المتانة العالية والتصميم العصري اللي يخطف العين 😍 طبقات جرانيت آمنة وصحية 100% لخلوها من الرصاص، وقاعدة ذكية بتوزع الحرارة بالتساوي عشان أكلك يطلع مظبوط كل مرة 🥘 المقابض عازلة للحرارة تماماً عشان تطبخي براحتك وبأمان 👩‍🍳الكمية محدودة جداً.. احجزيه دلوقتي ونورّي مطبخك بلمسة تركية فاخرة 🇹🇷💎 </p>
+                    <button class="buy-btn" onclick="orderProduct('طقم حلل جيرانيت ecoten 9 قطع ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQam3IErxdVfGMalAxQO3gZQtp8CZ2RseKcp8MIZDznfg&s" alt="طقم حلل سيراميك ">
+                    <h3>طقم حلل سيراميك  Arz celik</h3>
+                    <p>لأن مطبخك يستحق الفخامة والراحة.. طقم حلل أرزو كليك التركي وصل! ✨جمال التصميم التركي يلتقي مع صلابة الجرانيت الصحي الخالي تماماً من المواد الضارة. انسي تماماً مشكلة التصاق الطعام أو احتراقه، واطبخي بأقل نقطة زيت لصحة عائلتك! الطقم متكامل ويضم تشكيلة حلل متنوعة تناسب كل طبخاتك، بالإضافة إلى جريل مميز للمشويات وهدية ماسكات سيليكون حرارية. شياكة في مطبخك، وتوزيع حراري مثالي يوفر وقتك وطاقتك. اطلبيه الآن واجعلي الطبخ متعة يومية! 🍳❤️ </p>
+                    <button class="buy-btn" onclick="orderProduct('طقم حلل سيراميك Arz celik 9قطع ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+
+                <div class="product-card">
+                    <img src="https://m.media-amazon.com/images/I/71sWFncAd+L.jpg" alt="طقم ميلامين ">
+                    <h3>طقم ميلامين بيور مربع 38 قطعه</h3>
+                    <p>"السهل الممتنع في مطبخك! 🔥 طقم عشاء ميلامين بيور 38 قطعة بتصميمه المربع العصري اللي قالب الدنيا. شياكة تشرفك قدام ضيوفك، وخامة ثقيلة ومقاومة للكسر تستحمل معاكي المطبخ والاستخدام اليومي وغسالة الأطباق بأمان تام. الطقم كامل متكامل لـ 6 أفراد وبأشكال وميكسات ألوان تجنن.. اطلبيه دلوقتي وجددي سفرتك! 🍽️"</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم ميلامين بيور مربع 38 قطعه')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="ميلامين1.jpg" alt="طقم ميلامين ">
+                    <h3>طقم ميلامين "المهندس" 38 قطعة </h3>
+                    <p>لكل عروسة بتدور على الشياكة والتميز، ولكل ست بيت بتعشق التجديد! سِفرتك مش مجرد مكان للأكل، دي لوحة فنية بتعبر عن ذوقك. بنقدملك طقم ميلامين المهندس 38 قطعة بتصميم "الأوف وايت والروز" الساحر مع نقشة الفراشات والزهور الرقيقة. ميكس ألوان يفتح النفس ويخطف العين من أول نظرة. جودة ماليزية ونقاء 100% بيتحمل الاستخدام اليومي والعزومات. اطلبيه دلوقتي وخلي سِفرتك تملى البيت بهجة ودلع! 🌸</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم ميلامين المهندس 38 قطعه ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                <div class="product-card">
+                    <img src="صيني.jpg" alt="طقم صيني">
+                    <h3> طقم صيني مستورد 66ق البركه </h3>
+                    <p>"لأن سفْرتك هي عنوان ذوقك قدام ضيوفك، بنقدملك طقم عشاء بورسلين Bright Future المتكامل 66 قطعة! 🍽️ الطقم اللي هيغنيكي عن أي حاجة تانية؛ لأنه بيجمع بين التصميم العصري الراقي والمتانة العالية اللي بتدوم سنين. نقشة فضية هادية ورقيقة جداً بتضيف لمسة ملوكية على مائدتك في العزومات والمناسبات الكبيرة، وبتخليه قطعة أساسية لا غنى عنها في جهاز كل عروسة بتدور على الفخامة والتميز. خلي مائدتك تبهر الجميع واطلبيه دلوقتي! 👑"</p>
+                    <button class="buy-btn" onclick="orderProduct('طقم صيني مستورد 66ق البركه ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+
+                <div class="product-card">
+                    <img src="اركوبال.jpg" alt="طقم اركوبال">
+                    <h3> طقم اركوبال مربع 58ق</h3>
+                    <p>"اجمعي بين قوة التحمل والأناقة في طقم واحد! بنقدملك طقم عشاء أركوبال مربع متكامل 58 قطعة، المصنوع من خامة الأركوبال النقي ، والآمن تماماً للاستخدام اليومي في غسالة الأطباق والميكروويف. الطقم بيتميز بستايل مربع غاية في الرقة والشياكة مع تشكيلة قطع شاملة لكل احتياجات سِفرتك من أطباق غرف، وبولات شوربة، وفناجين. اختيار ذكي وعملي يعيش معاكي العمر كله! 🌟"</p>
+                    <button class="buy-btn" onclick="orderProduct(' طقم اركوبال مربع 58ق')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+
+
+            </div>
+        </section>
+
+        <section id="group-appliances" class="main-group">
+            <h2 class="group-title"><i class="fas fa-tv"></i> مجموعة الأجهزة الكهربائية</h2>
+
+            <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://robot-egy.com/wp-content/uploads/2025/12/%D8%A7%D9%84%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%AA%D8%B1%D9%83%D9%8A-1.webp" alt="خلاط">
+                    <h3>محضر طعام 8 وظائف كراشر1000وات روبوت – Robot</h3>
+                    <p>يتميز الجهاز بمحرك نحاسي بالكامل، و 15 سرعة مختلفة مع شفرات من الفولاذ المقاوم للصدأ و يتضمن الجهاز 8 وظائف في جهاز واحد، تشمل الخلاط، الكبة، والمطحنة و يأتي المنتج مع ضمان لمدة سنة كامله.</p>
+                    <button class="buy-btn" onclick="orderProduct('محضره طعام روبوت 1000وات ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+        <div class="product-card">
+                    <img src="https://makka.store/wp-content/uploads/2024/06/LM241B25-7.webp" alt="خلاط">
+                    <h3>خلاط مولينكس الأصلي (موديل LM242) بقدرة 500 واط وسعة 1.75</h3>
+                    <p>خلاط مولينكس الأصلي (موديل LM242) بقدرة 500 واط وسعة 1.75 لتر باللون الأبيض.يتميز بشفرات من الستانلس ستيل المتين لخلط فعال ومزود بمطحنة ومبشرة و صنع في فرنسا ويقدم سرعة واحدة بالإضافة إلى خاصية النبض للتحكم الكامل.</p>
+                    <button class="buy-btn" onclick="orderProduct('خلاط مولينكس الأصلي (موديل LM242) بقدرة 500 واط وسعة 1.75')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                
+        <div class="product-card">
+                    <img src="https://api.cezma.cloud/storage/thumbnails/products/web/17623937701000335496.jpg" alt="خلاط">
+                    <h3>محضر طعام هفار ٧ وظائف ٨٠٠٠ وات</h3>
+                    <p>يتميز خلاط هفار (HVAR) بقدرة محرك تصل إلى 8000 وات و تتضمن المجموعة عادةً عدة ملحقات، مثل دورق سعة 3 لتر ضد الكسر، ومطحنة للتوابل، وقد يحتوي على 7 وظائف في جهاز واحد و يعمل بمحرك نحاسي ويوفر سرعات متعددة لتحضير العصائر، طحن البهارات، وتقطيع اللحوم</p>
+                    <button class="buy-btn" onclick="orderProduct('محضر طعام هفار ٧ وظائف ٨٠٠٠ وات')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+            </div>
+    
+            <div class="products-grid">
+                <div class="product-card">
+                       <span class="badge red">جديد</span>
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT9mxf0UEUbzWjj4PdfyEf_WgrcL4pILUOwsRo_GS47PvJJNylYR4FiXPkWz77qIyJOJWdT5QLMCGwkTGnhW7bSjlU1K6nHkCmlICK79g5ILJ0SKyvZj8mS&usqp=CAc" alt="غساله">
+                    <h3>الغسالة القابلة للطي متعددة الوظائف </h3>
+                    <p>الغسالة القابلة للطي متعددة الوظائف هي الرفيق المثالي للمساحات الضيقة والرحلات حيث تجمع بين التصميم الذكي والأداء العملي وتتميز بهيكل مرن يتيح طيها وتخزينها بكل سهولة في حقيبة السفر أو تحت الحوض ورغم صغر حجمها فإنها توفر وظائف مزدوجة تشمل الغسيل والتعقيم بالإضاءة الزرقاء بالإضافة إلى سلة مخصصة لعصر وتجفيف الملابس الخفيفة مثل الجوارب وملابس الأطفال وتعمل بكفاءة عالية في توفير الماء والكهرباء مما يجعلها خيارا اقتصاديا ومريحا للاستخدام اليومي السريع</p>
+                    <button class="buy-btn" onclick="orderProduct('')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                    </button>
+                </div>
+
+                              <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxsMkvQfdKh6vZgPtPUBD4l4GQMwIEDil2t1Jgs2JhPg&s=10" alt="مضرب ">
+                    <h3>مضرب نسكافيه ارشا الاصلي </h3>
+                    <p>مضرب نسكافيه ارشيا الاصلي الذي يعمل بالشحن عبر كابل تايب سي يعتبر الخيار الاكثر طلبا ومبيعا في الاسواق نظرا لعمليته وقوته العالية حيث يتميز هذا الموديل باحتوائه على ثلاث سرعات مختلفة تتيح لك التحكم الكامل في كثافة الرغوة بضغطة زر واحدة كما ياتي مزودا براسين من الستانلس ستيل الاصلي المقاوم للصدأ احدهما مخصص لخفق الحليب وصنع فوم الكابتشينو الكثيف والاخر لخلط البيض والمكونات الخفيفة وتدعم المضرب بطارية داخلية قوية تدوم طويلا مما يغنيك تماما عن شراء البطاريات التقليدية المستمرة ويجعله اداة مثالية وسريعة للاستخدام اليومي في المنزل او المكتب لضمان الحصول على مشروبك المفضل برغوة غنية ومثالية في ثوان معدودة</p>
+                    <button class="buy-btn" onclick="orderProduct('مضرب نسكافيه ارشا الاصلي ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+                              <div class="products-grid">
+                <div class="product-card">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAUI5ljlkIIfwFIVOe05i83dkD6jpb9mdPRvkLA8l6BA&s=10" alt="خلاط ">
+                    <h3>خلاط تورنادو tbl 500w</h3>
+                    <p>يتميز خلاط تورنيدو 600 وات بموتور قوي يمنحك كفاءة عالية في خلط الأطعمة المختلفة وجرش الثلج بسهولة تامّة ويأتي مع دورق بلاستيكي متين ومقاوم للكسر بسعة لتر ونصف وهو حجم مناسب جدا للاستخدام العائلي اليومي كما يتضمن ملحقات عملية تشمل مطحنة مخصصة للتوابل والمكسرات وكبة صغيرة الحجم لفرم البصل والخضروات مما يجعله جهازا متعدد الوظائف في المطبخ ويوفر الخلاط سرعتين مختلفتين للتحكم في قوام المزيج بالإضافة إلى خاصية التشغيل المتقطع للخلط السريع ويهتم الجهاز بمعايير الأمان حيث يحتوي على قفل ذكي يمنع تشغيل الموتور قبل تركيب الدورق بشكل صحيح لحماية أفراد أسرتك وتأتي القاعدة بأقدام مطاطية تمنع الانزلاق لضمان ثباته الكامل أثناء التشغيل مع مكان مخصص لتخزين السلك الكهربائي للحفاظ على نظام المكان وتحرص مجموعة العربي على تقديم ضمان مجاني شامل لمدة عام كامل على الخلاط لتضمن لك خدمة صيانة ممتازة ما بعد البيع</p>
+                    <button class="buy-btn" onclick="orderProduct('خلاط تورنادو tbl 500w')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+            
+
+                           <div class="products-grid">
+                <div class="product-card">
+                      <img src="https://ls6iibytsc.eu.scalesta-cdn.com/BKmLo5NYBBRNnm9awd5d9rCBWCw=/filters:format(webp):fill(fff):quality(90)/www.tnateeshq8.com/images/detailed/60/Humidifier-Diffuser-Home-Decoration-USB-Powered-Smart-Timing-2-Spray-Modes-1000ml-Compact-for-Travel-Living.jpg" alt="">
+                    <h3>فواحه اسبايدر مان </h3>
+                    <p>اكسر الملل بلمسة عصرية.. تصميم هندسي ماسي يخطف الأنظار من أول نظرة و ودّع جفاف الغرفة واستمتع بهواء نقي برائحة عطرك المفضل مع رذاذ يدوم حتى 10 ساعات و الكمية محدودة جداً! اطلب قطعتك الآن وتميز قبل الجميع</p>
+                         <button class="buy-btn" onclick="orderProduct('فواحه سبايدر مان ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+             <div class="products-grid">
+                <div class="product-card">
+                      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQbbjuQJRG5WOCc-Z0cYKrQpqB4JranuOBwCbLjCqmkFh9dNUURbZtX41xC7N0lAm9dc-b16n9meYyvWzXpi3BlzBXoLGFsqnsupHIfT8XkkTuLhExaZW7G-unYYwjm8nWEP3-9_o8&usqp=CAc" alt="هندبلندر ">
+                    <h3>خلاط ارتي 500w </h3>
+                    <p>هل تبحث عن الخلاط المثالي الذي يجمع بين قوة الأداء الإيطالي والتصميم العصري الأنيق ليكون قطعتك المفضلة في المطبخ إليك خلاط آريتي بقوة خمسمائة واط وسعة لتر ونصف الذي يمنحك تجربة فريدة في تحضير أشهى العصائر والسموذي المنعش بفضل شفراته الحادة المصنوعة من الستانلس ستيل والقادرة على جرش الثلج والمكونات الصلبة بكل سهولة وسرعة مع مستويات تحكم مرنة تضمن لك قواما مثاليا في كل مرة لا تتردد في ترقية مطبخك اليوم واكتشاف متعة الطهي السريع والآمن مع جهاز يدوم طويلا ويمنح عائلتك أفضل المشروبات الطازجة يوميا احصل عليه الآن واستمتع بالجودة التي تستحقها في منزلك</p>
+                         <button class="buy-btn" onclick="orderProduct('خلاط ارتي 500 وات ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+             <div class="products-grid">
+                <div class="product-card">
+                      <img src="https://robot-egy.com/wp-content/uploads/2026/06/1.webp" alt="هند بلندر">
+                    <h3>هاند بلندر روبوت 5*1 </h3>
+                    <p>وداعاً لعناء المطبخ الطويل مع خلاط روبوت ميكس برو الخمسة في واحد المتكامل الذي يمنحك قوة ثمانمئة واط حقيقية لفرم اللحوم وإعداد أشهى العصائر والمخبوزات بلمسة زر واحدة ذكية تتحكم بسرعتها عبر ضغطة إصبعك بفضل تروسه وشفراته المعدنية الصلبة غير القابلة للكسر ليعيش معك العمر كله ويوفر وقتك وجهدك مع ضمان حقيقي لمدة عام كامل يضمن لك الجودة والراحة الرفيق المثالي لكل أم وطاهي يبحث عن الاحترافية والسرعة في مكان واحد احصل عليه الآن واجعل الطبخ متعة يومية لا تنتهي</p>
+                         <button class="buy-btn" onclick="orderProduct('هاند بلندر روبوت 5*1')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+             <div class="products-grid">
+                <div class="product-card">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTie1DemgrtaDccUhKE6oa9i0PBL00Qc1TnZODUtm6New&s=10" alt="كتل ">
+                    <h3>كتل تورنادو 1.7 لتر </h3>
+                        <p>"زهقت من الكاتل اللي بيصدي أو بيبوظ بعد شهرين؟ غير لـ تورنيدو 1.7 لتر ستانلس ستيل وانسى المشاكل دي تماماً! جهاز يعيش معاك العمر كله، بتصميم شيك يزين مطبخك، ونافذة مياه ذكية عشان تغلي على قد احتياجك بالظبط. مش بس كدة، معاه خدمة ما بعد البيع الأقوى في مصر من العربي. جودة تعتمد عليها وسعر على قد الإيد. اطلب المنتج الآن واستمتع بمشروبك الساخن في ثواني!"</p>
+                         <button class="buy-btn" onclick="orderProduct('كتل تورنادو 1.7L')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+             <div class="products-grid">
+                <div class="product-card">
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIWVmeqQHvyFELSUgOBG-hsNTPkOzj9q9neOv-uWfW4g&s=10" alt="مكواه">
+                    <h3>مكواه تاتش 1600 w </h3>
+                        <p>""الأناقة بتبدأ من اللبس المظبوط! 🌟استمتع بتجربة كي سلسة ومريحة مع مكواة تاتش "فاست" بقدرة 1600 وات. صُممت خصيصاً لتناسب نمط حياتك السريع، حيث تمنحك قاعدة التيفلون فائقة الانزلاق حماية كاملة لأقمشتك المفضلة وتمنع التصاقها. مع نظام التحكم الدقيق في درجات الحرارة وتصميمها المبتكر لكيّ زوايا الأزرار، هتوفر وقتك ومجهودك وبأعلى كفاءة وأفضل سعر في السوق. لا تتردد في اقتنائها اليوم!""</p>
+                         <button class="buy-btn" onclick="orderProduct('مكواه تاتش 1600 w ')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+
+             <div class="products-grid">
+                <div class="product-card">
+                      <img src="https://m.media-amazon.com/images/I/51Be8WgTSLL.jpg" alt="قلايه هوائيه ">
+                    <h3>اير فراير سوكانى 5 لتر ديجيتال</h3>
+                        <p>"الأكل المقرمش اللي بتحبيه من غير نقطة زيت واحدة! 🍟🍗وفّري في ميزانية الزيت واحمِي صحة أولادك مع قلاية سوكاني 5 لتر الديجيتال! بلمسة واحدة على شاشتها الذكية، هتعملي أحلى بطاطس مقرمشة، فراخ بروستد، وسمك مشوي في دقائق وبأقل مجهود. سعتها الكبيرة بتشيل فرخة كاملة، وسعرها على قد الإيد ومنافس لأي ماركة تانية. صحتك وصحة عيلتك تستاهل.. اطلبيها دلوقتي قبل نفاذ الكمية! 🛒✨"</p>
+                         <button class="buy-btn" onclick="orderProduct('اير فراير سوكانى 5 لتر ديجيتال')">
+                        <i class="fab fa-whatsapp"></i> أريد شراء هذا الصنف
+                            
+                    </button>
+                </div>
+
+
+
+        </section>
+
+    </div>
+
+
+
+
+
+
+
+
+
+<div class="request-section" style="text-align: center; margin: 40px 20px; padding: 30px; background: #fff5f5; border: 2px solid #ff2222; border-radius: 20px;">
+    <h3 style="color: #333; margin-bottom: 15px;">هل تبحث عن منتج غير موجود؟</h3>
+    
+    <!-- حقل لكتابة اسم المنتج -->
+    <input type="text" id="customProductName" placeholder="اكتب اسم المنتج الذي تريده هنا..." 
+           style="padding: 12px; width: 80%; max-width: 300px; border-radius: 20px; border: 1px solid #ccc; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto;">
+    
+    <button onclick="requestCustomProduct()" 
+            style="padding: 15px 30px; background: #ff2222; color: white; border: none; border-radius: 30px; cursor: pointer; font-size: 1.1rem; font-weight: bold;">
+        <i class="fab fa-whatsapp"></i> أرسل طلبك للإدارة
+    </button>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- هذا هو المكان الفارغ الذي سيقوم الـ JS بوضع التقييمات القادمة من فايربيز داخله تلقائياً -->
+<div id="reviewsContainer" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; direction: rtl;"></div>
+
+<div style="background: #f9f9f9; padding: 20px; border-radius: 10px; max-width: 500px; margin: 20px auto; text-align: right; direction: rtl; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+    <h3>أضف تقييمك لمعرض نيو لايف</h3>
+    <input type="text" id="reviewerName" placeholder="اسمك الكريم" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    
+    <label>التقييم بالنجوم: </label>
+    
+       <select id="reviewerStars" style="padding: 5px; margin-bottom: 10px; border-radius: 5px;">
+    <!-- سنعطي "يفوق الوصف" القيمة 7 -->
+    <option value="7">★★★★★★★ (7/5) يفوق الوصف</option>
+    <option value="5">★★★★★ (5/5)</option>
+    <option value="4">★★★★ (4/5)</option>
+    <option value="3">★★★ (3/5)</option>
+    <option value="2">★★ (2/5)</option>
+    <option value="1">★ (1/5)</option>
+
+    </select>
+    
+    <textarea id="reviewerText" placeholder="اكتب رأيك في خدماتنا أو المنتجات هنا..." style="width: 100%; padding: 8px; height: 80px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+    <button id="submitBtn" style="background: #0044cc; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold;">نشر التقييم أونلاين</button>
+</div>
+
+    <footer>
+        <div class="footer-social">
+            <p>تابعوا صفحاتنا الرسمية لمعرفة أحدث العروض والمنتجات:</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/profile.php?id=100065208172370" target="_blank" class="social-icon facebook" title="تابعنا على فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.tiktok.com/@new.life992009" target="_blank" class="social-icon tiktok" title="تابعنا على تيك توك"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@New_life2009" target="_blank" class="social-icon youtube" title="تابعنا على يوتيوب"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <hr class="footer-divider">
+        <p class="dev-credits">&copy; 2026 معرض نيو لايف للأدوات المنزلية</p>
+        <p class="dev-credits" style="color:#ff2222; font-weight:bold;">اداره حسام رضوان</p>
+        <p class="dev-credits" style="color:#ff2222; font-weight:bold;">العنوان سجين الكوم</p>
+        <!-- قسم موقع المعرض الدقيق على خريطة جوجل المحدث -->
+    <section class="location-section" style="background-color: #ffffff; padding: 40px 20px; text-align: center; margin-top: 40px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
+        <h2 style="color: #0044cc; font-size: 1.8rem; margin-bottom: 15px;"><i class="fas fa-map-marked-alt"></i>موقع المعرض علي جوجل مابس </h2>
+        <p style="font-size: 1.1rem; color: #555; margin-bottom: 10px; font-weight: 600;">العنوان: سجين الكوم - مدخل محطة القطار - بجوار مسجد ندا</p>
+        <p style="font-size: 0.95rem; color: #777; margin-bottom: 20px;">اضغط على الزر بالأسفل لتشغيل نظام الملاحة والوصول إلى المعرض مباشرة</p>
+        
+        <!-- رابط لوكيشن معرض نيو لايف الصحيح الذي أرسلته -->
+        <a href="https://maps.app.goo.gl/s8LFA1tsnsA6QgBx5" target="_blank" class="popover-link" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 25px; background-color: #ff2222; text-decoration: none; color: white; font-weight: bold;">
+            <i class="fas fa-location-arrow"></i> افتح الاتجاهات في خرائط Google
+        </a>
+    </section>
+    </footer>
+
+
+<!-- نافذة عرض الصور الكبيرة -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-content" id="full-img">
+    <p id="lightbox-description" style="color: white; margin-top: 15px; font-size: 1.2rem; text-align: center; font-family: sans-serif;"></p>
+</div>
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script> <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

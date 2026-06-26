@@ -1,0 +1,619 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f6f9; /* اللون الثالث المريح: الرمادي الفاتح */
+    color: #333;
+}
+
+/* شريط التنقل الاحترافي */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 6%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* الشعار الدائري بألوان الأزرق والأحمر */
+.circular-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0044cc, #ff2222);
+    color: #fff;
+    font-weight: 900;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.brand-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #0044cc; /* أزرق */
+    line-height: 1.2;
+}
+
+.brand-sub {
+    font-size: 0.8rem;
+    color: #ff2222; /* أحمر */
+    font-weight: 600;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #0044cc;
+}
+
+/* زر التواصل العلوي المطور */
+button.nav-btn {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+button.nav-btn:hover {
+    transform: translateY(-2px);
+    background-color: #20ba5a;
+}
+
+/* قائمة الأرقام المنبثقة الذكية */
+.contact-popover {
+    position: absolute;
+    top: 75px;
+    left: 6%;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.contact-popover p {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.popover-link {
+    text-decoration: none;
+    color: white;
+    background-color: #0044cc;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.popover-link:hover {
+    background-color: #0033aa;
+}
+
+.popover-link.red-link {
+    background-color: #ff2222;
+}
+
+.popover-link.red-link:hover {
+    background-color: #cc1111;
+}
+
+/* البانر الرئيسي الواجهة */
+.hero {
+    background: linear-gradient(rgba(0, 68, 204, 0.4), rgba(255, 34, 34, 0.4)), url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200') center/cover;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p {
+    font-size: 1.1rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+/* تصميم المجموعات والبطاقات */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.main-group {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+}
+
+.group-title {
+    font-size: 1.8rem;
+    color: #0044cc;
+    border-right: 5px solid #ff2222;
+    padding-right: 12px;
+    margin-bottom: 20px;
+}
+
+.sub-category-title {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    color: #222;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    height: 45px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* شارات التمييز */
+.badge {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    font-weight: 700;
+}
+.badge.red { background-color: #ff2222; }
+.badge.blue { background-color: #0044cc; }
+
+/* زر شراء الواتساب */
+.buy-btn {
+    width: 100%;
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+}
+
+.buy-btn:hover {
+    background-color: #1ebd56;
+}
+
+/* التذييل النظيف */
+footer {
+    background-color: #111520;
+    color: #aaa;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 60px;
+    font-size: 0.95rem;
+    border-top: 4px solid #0044cc;
+    line-height: 1.8;
+}
+
+.dev-credits span {
+    color: #ff2222;
+    font-weight: bold;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 2%; /* تم تقليل المسافة الجانبية لتستوعب المجموعات الجديدة كلها في سطر واحد */
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+.review-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+
+
+
+/* تصميم شارة التقييم */
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffcc00;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-size: 1rem;
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(255, 204, 0, 0.4);
+    animation: pulse 2s infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* حركة النبض (Pulse) */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* تأثير عند مرور الماوس */
+.rating-badge:hover {
+    transform: scale(1.1);
+    background: #e6b800;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    
+    /* الخلفية مع الطبقة البيضاء */
+    background: url('https://i.pinimg.com/1200x/a2/07/be/a207bed4e6b310061724cc680d94290f.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+/* تنسيق خاص للتقييم الذي يفوق الوصف */
+.special-rating {
+    color: #ffd700; /* لون ذهبي */
+    font-weight: bold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    animation: pulse 2s infinite; /* حركة نبض خفيفة */
+}
+
+
+/* تأثير احترافي عند اختيار "يفوق الوصف" */
+.fire-mode {
+    border: 5px solid #ff4500 !important;
+    box-shadow: 0 0 20px #ff4500, inset 0 0 20px #ff4500 !important;
+    transition: all 0.5s ease;
+}
+
+
+
+#reviewsContainer {
+    display: grid;
+    /* هذا الكود يجعل التقييمات تأخذ عرض الشاشة وتتوزع تلقائياً */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 20px; /* المسافة بين التقييمات */
+    padding: 20px;
+    direction: rtl;
+}
+
+/* تنسيق شكل التقييم الواحد ليكون واضحاً */
+.review-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(218, 150, 3, 0.1);
+    border: 1px solid #ddd;
+}
+
+
+
+
+
+
+
+
+/* تأكد أن الـ navbar لديه position relative */
+.navbar {
+    position: relative;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    border: 3px solid #d4af37;
+}
+.close-lightbox {
+    position: absolute; top: 20px; right: 30px;
+    color: white; font-size: 40px; cursor: pointer;
+}
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    flex-direction: column; /* هذه تضمن أن الوصف يظهر تحت الصورة */
+    justify-content: center; 
+    align-items: center;
+    z-index: 9999;
+}
+.lightbox-content { max-width: 80%; max-height: 60%; border: 3px solid #fff; }
+.close-lightbox { position: absolute; top: 20px; right: 30px; font-size: 40px; color: white; cursor: pointer; }
+
+
+
+.product-card img {
+    cursor: pointer; /* تغيير شكل الماوس عند الوقوف على الصورة */
+    transition: transform 0.3s;
+}
+
+.product-card img:hover {
+    transform: scale(1.03); /* تكبير بسيط عند تمرير الماوس */
+}
+
+
+
+
+/* حاوية للنوتس لترتيبها فوق بعضها بدون تداخل */
+.hints-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9999; /* لضمان ظهورها فوق كل شيء دون إخفاء أي شيء آخر */
+}
+
+.hint-note {
+    background: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    font-size: 0.85rem;
+    white-space: nowrap; /* لمنع النص من النزول لسطر جديد بشكل غريب */
+}
+
+
+/* هذا يجعل الـ Lightbox دائماً فوق أي شيء آخر */
+.lightbox {
+    z-index: 999999 !important;
+}
+
+/* وهذا يضمن أن الـ hint-note لا تغطي الصور */
+.hint-note {
+    z-index: 10;
+}
+
+
+
+
+.contact-menu {
+    display: none !important; /* فرض الإخفاء التام في البداية */
+    position: absolute;
+    top: 60px; /* المسافة من الأعلى */
+    right: 20px;
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 1px solid #ddd;
+}
+
+
+
+/* هذا الكود يضمن أن القائمة مخفية عند فتح الموقع لأول مرة */
+.contact-popover {
+    display: none; 
+    position: absolute;
+    /* ... باقي التنسيقات الخاصة بك ... */
+}
+
+
+
+.circular-logo {
+    width: 100px;  /* بدلاً من 40px أو 50px، جرب زيادة هذا الرقم */
+    height: 100px; /* يجب أن يتطابق هذا الرقم مع الـ width لتبقى الدائرة منتظمة */
+    font-size: 20px; /* لتكبير الحروف الموجودة داخل الدائرة */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* للحفاظ على الشكل الدائري */
+    /* إذا كنت تستخدم صورة، تأكد من إضافة هذا السطر */
+    overflow: hidden; 
+}
+
+
+
+
+
+.navbar {
+    position: sticky; /* تجعل العنصر يلتصق */
+    top: 0;           /* تضمن التصاقه بالحافة العلوية تماماً */
+    z-index: 1000;    /* تضمن ظهور الشريط فوق أي عناصر أخرى في الصفحة */
+    width: 100%;      /* لضمان عرض الشريط بكامل الصفحة */
+    background-color: white; /* تأكد من وضع خلفية لكي لا تظهر العناصر تحتها عند التمرير */
+}
+
+
+
+
+
+.about-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* تغبيش الخلفية */
+    backdrop-filter: blur(8px); /* تأثير الضباب السينمائي */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.about-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+}
+
+.about-content h2 { color: #ffcc00; }
+.close-btn { 
+    background: none; border: none; color: white; 
+    font-size: 24px; cursor: pointer; float: left; 
+}
+
+
+
+
+
+
+
+
+
+
+.update-notice {
+    background: #2c3e50; /* لون غامق يتناسب مع "نيو لايف" */
+    color: #ffcc00; /* لون ذهبي للفت الانتباه */
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid #ffcc00;
+    position: relative;
+    z-index: 99;
+}
+
+.update-notice i {
+    margin-left: 8px;
+    animation: rotate 3s linear infinite; /* حركة دوران للأيقونة */
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
