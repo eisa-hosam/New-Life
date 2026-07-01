@@ -90,7 +90,7 @@ if (closeBtn) {
 // 5. دالة طلب المنتج عبر الواتساب
 function orderProduct(productName) {
     const phoneNumber = "201091076268"; 
-    const message = `مرحباً، أريد الاستفسار أو طلب شراء هذا المنتج: ${productName}`;
+    const message = `مرحباً، ايها الحج حسام اريد الاستفسار او طلب هذا المنتج : ${productName}`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
@@ -104,7 +104,7 @@ function requestCustomProduct() {
         return;
     }
     const phoneNumber = "201091076268";
-    const message = `مرحباً، أريد الحصول على منتج: ${productName}`;
+    const message = `مرحباً، أريد الحصول على منتج غير موجود بالويب: ${productName}`;
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
 }
@@ -126,7 +126,107 @@ function toggleContactMenu() {
 
 
 
-function toggleAbout() {
-    const modal = document.getElementById('aboutContainer');
-    modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+
+
+
+
+
+
+
+
+
+
+
+
+// ============================================================
+let searchDebounceTimer = null;
+
+function normalizeArabicText(text) {
+    return text
+        .replace(/[أإآا]/g, 'ا')
+        .replace(/ى/g, 'ي')
+        .replace(/ة/g, 'ه')
+        .replace(/[ًٌٍَُِّْـ]/g, '')
+        .toLowerCase()
+        .trim();
+}
+
+function searchProducts() {
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(() => {
+        const input = document.getElementById('productSearchInput');
+        const clearBtn = document.getElementById('clearSearchBtn');
+        const noResultsBox = document.getElementById('noResultsBox');
+        const missingProductName = document.getElementById('missingProductName');
+        const resultsCount = document.getElementById('searchResultsCount');
+        if (!input) return;
+
+        const rawQuery = input.value.trim();
+        if (clearBtn) clearBtn.style.display = rawQuery ? 'block' : 'none';
+
+        if (rawQuery === '') {
+            document.querySelectorAll('.product-card, .products-grid, .main-group').forEach(el => {
+                el.classList.remove('search-hidden');
+            });
+            if (noResultsBox) noResultsBox.style.display = 'none';
+            if (resultsCount) resultsCount.style.display = 'none';
+            return;
+        }
+
+        const query = normalizeArabicText(rawQuery);
+        let visibleCount = 0;
+
+        document.querySelectorAll('.main-group').forEach(group => {
+            let groupHasVisible = false;
+            group.querySelectorAll('.product-card').forEach(card => {
+                const titleEl = card.querySelector('h3');
+                const descEl = card.querySelector('p');
+                const title = titleEl ? normalizeArabicText(titleEl.innerText) : '';
+                const desc = descEl ? normalizeArabicText(descEl.innerText) : '';
+                const isMatch = title.includes(query) || desc.includes(query);
+                const parentGrid = card.closest('.products-grid');
+
+                if (isMatch) {
+                    card.classList.remove('search-hidden');
+                    if (parentGrid) parentGrid.classList.remove('search-hidden');
+                    groupHasVisible = true;
+                    visibleCount++;
+                } else {
+                    card.classList.add('search-hidden');
+                }
+            });
+            group.classList.toggle('search-hidden', !groupHasVisible);
+        });
+
+        if (visibleCount === 0) {
+            if (noResultsBox) noResultsBox.style.display = 'block';
+            if (missingProductName) missingProductName.innerText = rawQuery;
+            if (resultsCount) resultsCount.style.display = 'none';
+        } else {
+            if (noResultsBox) noResultsBox.style.display = 'none';
+            if (resultsCount) {
+                resultsCount.style.display = 'block';
+                resultsCount.innerText = `تم العثور على ${visibleCount} منتج مطابق`;
+            }
+        }
+    }, 200);
+}
+
+function clearSearch() {
+    const input = document.getElementById('productSearchInput');
+    if (!input) return;
+    input.value = '';
+    searchProducts();
+    input.focus();
+}
+
+function sendMissingProductToWhatsapp() {
+    const input = document.getElementById('productSearchInput');
+    if (!input) return;
+    const productName = input.value.trim();
+    if (!productName) return;
+    const phoneNumber = "201091076268";
+    const message = `مرحباً، بحثت عن هذا المنتج ولم أجده في موقع نيو لايف: "${productName}" - هل يمكن توفيره؟`;
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
 }
