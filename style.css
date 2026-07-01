@@ -866,16 +866,3 @@ body {
 
 
 
-/* الأساس - Desktop */
-.container {
-  display: flex;
-  width: 80%;
-}
-
-/* الموبايل */
-@media (max-width: 768px) {
-  .container {
-    display: block;
-    width: 100%;
-  }
-}
