@@ -858,3 +858,30 @@ body {
 .product-card.search-hidden { display: none !important; }
 .products-grid.search-hidden { display: none !important; }
 .main-group.search-hidden { display: none !important; }
+
+
+
+
+
+
+
+
+/* هذا الكود لضبط الموقع ليكون مناسباً للهاتف تماماً */
+body {
+    width: 100vw; /* عرض الشاشة بالكامل */
+    overflow-x: hidden; /* منع التحرك يميناً ويساراً */
+    margin: 0;
+    padding: 0;
+}
+
+/* التأكد من أن أي صورة أو عنصر لا يخرج عن حدود الهاتف */
+img, div, section {
+    max-width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* ضبط العناصر في المنتصف */
+.container {
+    width: 95% !important;
+    margin: 0 auto;
+}
