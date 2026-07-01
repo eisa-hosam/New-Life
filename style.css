@@ -866,22 +866,16 @@ body {
 
 
 
-/* هذا الكود لضبط الموقع ليكون مناسباً للهاتف تماماً */
-body {
-    width: 100vw; /* عرض الشاشة بالكامل */
-    overflow-x: hidden; /* منع التحرك يميناً ويساراً */
-    margin: 0;
-    padding: 0;
-}
-
-/* التأكد من أن أي صورة أو عنصر لا يخرج عن حدود الهاتف */
-img, div, section {
-    max-width: 100% !important;
-    box-sizing: border-box;
-}
-
-/* ضبط العناصر في المنتصف */
+/* الأساس - Desktop */
 .container {
-    width: 95% !important;
-    margin: 0 auto;
+  display: flex;
+  width: 80%;
+}
+
+/* الموبايل */
+@media (max-width: 768px) {
+  .container {
+    display: block;
+    width: 100%;
+  }
 }
