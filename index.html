@@ -1,265 +1,443 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="keywords" content="أدوات منزلية, مستلزمات المنزل, أدوات المطبخ, تجهيز المنزل, أدوات منزلية حديثة, مستلزمات المطبخ, أدوات البيت, متجر أدوات منزلية, أجهزة منزلية صغيرة, منظمات المنزل, أدوات طبخ, رفايع المطبخ, منظمات مطبخ, أدوات تنظيف, جهاز العروسة">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#14213d">
-<title>نيو لايف | معرض الأدوات المنزلية - سجين الكوم</title>
-<meta name="description" content="معرض نيو لايف للأدوات المنزلية في سجين الكوم، مركز قطور. أدوات منزلية، أجهزة كهربائية، بلاستيكات وأطقم عرائس بأفضل الأسعار.">
-<link rel="icon" href="ICON.ico">
-<link rel="manifest" href="manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--navy:#14213d;--or:#d62839;--bg:#f4f5f8;--ink:#14213d;--mute:#6c7384;--line:#e6e8ee;--sb:env(safe-area-inset-bottom,0px)}
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:'Cairo',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;padding-bottom:calc(30px + var(--sb))}
-button{font:inherit;border:0;cursor:pointer;background:none;color:inherit}
-.bar{position:sticky;top:0;z-index:60;box-shadow:0 2px 10px rgba(20,33,61,.06);background:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
-.bar img{width:46px;height:46px;object-fit:contain;border-radius:50%}
-.bar img,.bar b{cursor:pointer}.bar b{font-size:1.1rem;font-weight:800;flex:1;line-height:1.1}.bar b small{display:block;font-size:.7rem;color:var(--mute);font-weight:600}
-.ic{width:42px;height:42px;border-radius:50%;background:var(--bg);display:grid;place-items:center;text-decoration:none;font-size:1.1rem}
-.hero{margin:12px 14px;border-radius:22px;background:linear-gradient(120deg,var(--navy),#2b3f73);color:#fff;padding:20px 18px;position:relative;overflow:hidden}
-.hero::after{content:"💕🏠💕";position:absolute;left:-6px;bottom:-18px;font-size:4.5rem;opacity:.18}
-.hero h2{font-size:1.3rem;font-weight:800;line-height:1.35}.hero p{font-size:.85rem;opacity:.8;margin:4px 0 12px}
-.hero a{display:inline-block;background:var(--or);color:#fff;font-weight:700;padding:9px 20px;border-radius:99px;font-size:.88rem;text-decoration:none}
-.sw{position:sticky;top:var(--bh,64px);z-index:50;background:var(--bg);padding:8px 14px}
-.search{display:flex;gap:8px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:14px;padding:0 14px}
-.search input{flex:1;border:0;outline:0;background:none;font:inherit;font-size:1rem;padding:12px 0}
-.cats{display:flex;gap:10px;overflow-x:auto;padding:6px 14px 12px;scrollbar-width:none}.cats::-webkit-scrollbar{display:none}
-.cat{flex:none;width:78px;text-align:center;font-size:.72rem;font-weight:700;color:var(--mute)}
-.cat span{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 4px;border-radius:18px;background:#fff;border:2px solid transparent;font-size:1.6rem;box-shadow:0 2px 8px rgba(20,33,61,.06)}
-.cat.on{color:var(--ink)}.cat.on span{border-color:var(--or)}
-.cat em{font-style:normal;display:block;line-height:1.25}
-.t{padding:6px 16px;font-weight:800;font-size:1rem}.t small{color:var(--mute);font-weight:600;font-size:.78rem}
-.list{padding:0 14px;display:grid;gap:10px}
-.row{display:flex;gap:12px;background:#fff;border-radius:18px;padding:10px;box-shadow:0 2px 8px rgba(20,33,61,.05)}
-.row .im{position:relative;flex:none;width:112px;height:112px;border-radius:14px;background:#fff;border:1px solid var(--line);overflow:hidden}
-.row img{width:100%;height:100%;object-fit:contain}
-.bd{position:absolute;top:0;right:0;background:var(--or);color:#fff;font-size:.68rem;font-weight:700;padding:1px 10px;border-radius:0 0 0 10px}
-.tx{flex:1;min-width:0;display:flex;flex-direction:column;text-align:right}
-.tx h3{font-size:.92rem;font-weight:700;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.tx p{font-size:.78rem;color:var(--mute);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
-.ac{margin-top:auto;display:flex;gap:6px;padding-top:6px}
-.wa{flex:1;background:#25d366;color:#fff;border-radius:10px;padding:8px;font-weight:700;font-size:.82rem}
-.dt{background:var(--bg);border-radius:10px;padding:8px 12px;font-weight:700;font-size:.82rem}
-.skel{height:136px;border-radius:18px;background:linear-gradient(90deg,#eceef3 25%,#f7f8fb 50%,#eceef3 75%);background-size:200%;animation:s 1.2s infinite}@keyframes s{to{background-position:-200% 0}}
-.miss{text-align:center;padding:40px 14px;color:var(--mute)}.miss .wa{display:inline-block;margin-top:12px;padding:11px 22px;flex:none}
-.rv{margin:26px 0 0;padding:0 14px}.rv h2{font-size:1rem;font-weight:800;margin-bottom:8px}
-.rvs{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.rvc{flex:none;width:78%;max-width:290px;scroll-snap-align:start;background:#fff;border-radius:16px;padding:14px;font-size:.88rem}.rvc b{color:var(--or)}.rvc small{color:var(--mute);font-weight:700}
-.rf{margin-top:10px;background:#fff;border-radius:16px;padding:12px;display:grid;gap:8px}
-.rf input,.rf select,.rf textarea{border:1px solid var(--line);border-radius:10px;padding:11px;font:inherit;font-size:1rem;width:100%;background:var(--bg)}
-.rf button{background:var(--navy);color:#fff;border-radius:10px;padding:12px;font-weight:700}
-footer{margin:22px 14px 0;background:var(--navy);color:#fff;border-radius:20px;padding:18px}
-footer h4{margin-bottom:6px}footer a,footer p{display:block;color:#fff;text-decoration:none;font-size:.88rem;opacity:.9;margin-top:4px}
-.fab{position:fixed;left:14px;bottom:calc(16px + var(--sb));z-index:40;width:58px;height:58px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;font-size:1.7rem;box-shadow:0 6px 16px rgba(0,0,0,.25);text-decoration:none}
-.sh{position:fixed;inset:0;z-index:100;background:#fff;display:none;flex-direction:column}.sh.open{display:flex}
-.sh .bx{flex:1;overflow:auto}
-.sh img{width:100%;height:46vh;object-fit:contain;background:#fff;border-bottom:1px solid var(--line)}
-.sh .c{padding:16px}.sh h3{font-size:1.15rem;margin-bottom:8px}.sh p{color:var(--mute);font-size:.93rem;white-space:pre-line}
-.sh .x{z-index:20;position:absolute;top:calc(10px + env(safe-area-inset-top,0px));right:12px;width:42px;height:42px;border-radius:50%;background:var(--navy);color:#fff;box-shadow:0 2px 10px rgba(0,0,0,.35);font-size:1.25rem;font-weight:700;transition:transform .2s}.sh .x:active{transform:scale(.88)}
-.sh .ob{margin:10px 14px calc(12px + var(--sb));background:#25d366;color:#fff;border-radius:14px;padding:15px;font-weight:800;font-size:1rem}
-.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#222;color:#fff;padding:10px 18px;border-radius:99px;font-size:.85rem;z-index:300;display:none}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نيو لايف — معرض الأدوات المنزلية</title>
+    <meta
+      name="description"
+      content="معرض نيو لايف للأدوات المنزلية والأجهزة الكهربائية وتجهيز العرائس — سجين الكوم، مركز قطور، محافظة الغربية."
+    />
+    <meta property="og:title" content="نيو لايف — معرض الأدوات المنزلية" />
+    <meta
+      property="og:description"
+      content="معرض نيو لايف للأدوات المنزلية والأجهزة الكهربائية وتجهيز العرائس — سجين الكوم، مركز قطور."
+    />
+    <link rel="icon" type="image/png" href="./Logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Top Header -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <button type="button" class="brand-btn" data-nav="store">
+          <img src="./Logo.png" alt="شعار نيو لايف" class="brand-logo" />
+          <span class="brand-title">نيو لايف</span>
+        </button>
 
-/* ===== حركات وتأثيرات ===== */
-#pg{position:fixed;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,var(--or),#ff8a5b);transform-origin:right;transform:scaleX(0);z-index:200}
-.bar img{animation:spin-in .9s cubic-bezier(.2,.8,.2,1) both}
-@keyframes spin-in{from{transform:rotate(-200deg) scale(.3);opacity:0}to{transform:none;opacity:1}}
-.hero{background:linear-gradient(120deg,#14213d,#2b3f73,#3a2a5e,#14213d);background-size:300% 300%;animation:grad 10s ease infinite}
-@keyframes grad{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
-.hero::after{animation:flt 4s ease-in-out infinite}
-@keyframes flt{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-14px) rotate(4deg)}}
-.hero h2,.hero p,.hero a{animation:fup .7s cubic-bezier(.2,.8,.2,1) both}
-.hero p{animation-delay:.15s}.hero a{animation-delay:.3s}
-@keyframes fup{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.hero a{position:relative;overflow:hidden;animation:fup .7s .3s both,pls 2s 1.2s infinite}
-@keyframes pls{0%{box-shadow:0 0 0 0 rgba(214,40,57,.6)}70%{box-shadow:0 0 0 14px rgba(214,40,57,0)}100%{box-shadow:0 0 0 0 rgba(214,40,57,0)}}
-.hero a::after,.wa::after{content:"";position:absolute;top:0;left:-70%;width:45%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shn 3.2s infinite}
-@keyframes shn{0%{left:-70%}55%,100%{left:140%}}
-.tick{margin:0 14px;overflow:hidden;border-radius:14px;background:#fff;border:1px solid var(--line);padding:9px 0}
-.tk{display:flex;width:max-content;animation:tk 26s linear infinite}
-.tk span{white-space:nowrap;padding:0 18px;font-weight:700;font-size:.82rem;color:var(--navy)}
-.tk span::after{content:"•";margin-right:36px;color:var(--or)}
-@keyframes tk{to{transform:translateX(50%)}}
-.tick:hover .tk{animation-play-state:paused}
-.cat{transition:transform .2s}.cat:active{transform:scale(.92)}
-.cat span{transition:transform .25s,border-color .25s,box-shadow .25s}
-.cat:hover span{transform:translateY(-3px)}
-.cat.on span{animation:pop .45s cubic-bezier(.3,1.6,.5,1);box-shadow:0 6px 14px rgba(214,40,57,.25)}
-@keyframes pop{0%{transform:scale(.7)}100%{transform:scale(1)}}
-.rise{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
-.rise.in{opacity:1;transform:none}
-.t.rise{transform:translateX(30px)}.t.rise.in{transform:none}
-.row.in:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(20,33,61,.12)}
-.row.in:active{transform:scale(.98)}
-.row img{transition:transform .5s}.row:hover img{transform:scale(1.08)}
-.bd{animation:bdp 2s ease-in-out infinite}
-@keyframes bdp{0%,100%{filter:brightness(1)}50%{filter:brightness(1.25)}}
-.wa{position:relative;overflow:hidden;transition:transform .15s,box-shadow .2s}
-.wa:active{transform:scale(.94)}.wa:hover{box-shadow:0 4px 12px rgba(37,211,102,.45)}
-.dt{transition:background .2s,transform .15s}.dt:active{transform:scale(.94)}
-.fab{animation:wig 5s infinite}
-.fab::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25d366;z-index:-1;animation:ring 2s ease-out infinite}
-@keyframes ring{from{transform:scale(1);opacity:.6}to{transform:scale(1.9);opacity:0}}
-@keyframes wig{0%,86%,100%{transform:none}89%{transform:rotate(-14deg) scale(1.1)}92%{transform:rotate(12deg) scale(1.1)}95%{transform:rotate(-8deg)}98%{transform:rotate(4deg)}}
-.sh.open{animation:sup .35s cubic-bezier(.2,.8,.2,1)}
-@keyframes sup{from{transform:translateY(60px);opacity:0}to{transform:none;opacity:1}}
-.sh.open img{animation:zin .6s ease both}
-@keyframes zin{from{transform:scale(1.15);opacity:.4}to{transform:none;opacity:1}}
-.sh .ob{animation:pls2 2s infinite}
-@keyframes pls2{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)}70%{box-shadow:0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-.toast{animation:tin .3s}@keyframes tin{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
-.rvc{transition:transform .25s}.rvc:hover{transform:translateY(-3px)}
-footer a{transition:transform .2s,opacity .2s}footer a:hover{transform:translateX(-5px);opacity:1}
-.up{position:fixed;right:14px;bottom:calc(16px + var(--sb));z-index:40;width:46px;height:46px;border-radius:50%;background:var(--navy);color:#fff;font-size:1.2rem;box-shadow:0 6px 16px rgba(0,0,0,.25);opacity:0;transform:translateY(20px) scale(.6);pointer-events:none;transition:.3s}
-.up.show{opacity:1;transform:none;pointer-events:auto}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rise{opacity:1;transform:none}}
-footer a.mp{background:#fff;color:var(--navy);font-weight:800;text-align:center;padding:11px;border-radius:12px;margin:8px 0 10px;opacity:1;animation:pls2 2.2s infinite}footer a.mp:hover{transform:scale(1.03)}
-.sh.open .x{animation:xin .55s .25s cubic-bezier(.3,1.6,.5,1) backwards,xpl 2.4s 1.2s infinite}
-@keyframes xin{from{transform:rotate(-180deg) scale(0);opacity:0}to{transform:none;opacity:1}}
-@keyframes xpl{0%{box-shadow:0 2px 10px rgba(0,0,0,.35),0 0 0 0 rgba(214,40,57,.6)}70%{box-shadow:0 2px 10px rgba(0,0,0,.35),0 0 0 12px rgba(214,40,57,0)}100%{box-shadow:0 2px 10px rgba(0,0,0,.35),0 0 0 0 rgba(214,40,57,0)}}
-.sh .x:hover{transform:rotate(90deg) scale(1.1);background:var(--or)}
-.sh .x:active{transform:rotate(90deg) scale(.85)}
-@media(min-width:760px){body{max-width:760px;margin:auto}}
+        <nav class="desktop-nav" aria-label="التنقل الرئيسي">
+          <button type="button" class="nav-link active" data-nav="store">المتجر</button>
+          <button type="button" class="nav-link" data-nav="chat">المساعد الذكي</button>
+          <button type="button" class="nav-link" data-nav="account">
+            حسابي (<span id="wishCountDesktop">0</span>)
+          </button>
+          <button type="button" class="nav-link hidden" id="navAdminDesktop" data-nav="admin">
+            لوحة المالك
+          </button>
+        </nav>
 
-/* ===== Splash: pen draws heart, logo appears inside ===== */
-html.splash-on,html.splash-on body{overflow:hidden;height:100%}
-#splash{position:fixed;inset:0;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:radial-gradient(circle at 50% 40%,#2b3f73 0%,#14213d 65%);transition:opacity .55s ease,visibility .55s;cursor:pointer}
-#splash.out{opacity:0;visibility:hidden}
-#splash svg{width:min(78vw,340px);height:auto;overflow:visible;filter:drop-shadow(0 10px 30px rgba(214,40,57,.35))}
-#spHeart{fill:rgba(255,255,255,0);stroke:#d62839;stroke-width:5;stroke-linecap:round;stroke-linejoin:round;transition:fill .7s ease}
-#spHeart.fill{fill:rgba(255,255,255,.07)}
-#spPen{filter:drop-shadow(0 3px 3px rgba(0,0,0,.4));transition:opacity .35s ease}
-#spPen.gone{opacity:0}
-#spLogo{opacity:0;transform:scale(.3);transform-box:fill-box;transform-origin:center}
-#spLogo.show{animation:spPop .8s cubic-bezier(.2,1.5,.4,1) forwards}
-@keyframes spPop{from{opacity:0;transform:scale(.3) rotate(-12deg)}to{opacity:1;transform:none}}
-#spTxt{font-family:'Cairo',system-ui,sans-serif;color:#fff;font-weight:800;font-size:1.35rem;letter-spacing:.5px;opacity:0;transform:translateY(10px);transition:.6s ease}
-#spTxt small{display:block;text-align:center;font-weight:600;font-size:.78rem;opacity:.7}
-#spTxt.show{opacity:1;transform:none}
-</style>
-</head>
-<body>
-<div id="splash" aria-hidden="true"><svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
-<path id="spHeart" d="M100 36 C91 19 74 8 54 8 C30 8 8 24 8 52 C8 85 40 120 100 168 C160 120 192 85 192 52 C192 24 170 8 146 8 C126 8 109 19 100 36 Z"/>
-<image id="spLogo" href="Logo.png" x="56" y="42" width="88" height="88" preserveAspectRatio="xMidYMid slice"/>
-<g id="spPen" style="opacity:0"><polygon points="0,0 3,-8 8,-3" fill="#3a3a3a"/><polygon points="3,-8 8,-3 31,-26 26,-31" fill="#fff" stroke="#14213d" stroke-width="1"/><polygon points="26,-31 31,-26 37,-32 32,-37" fill="#d62839"/></g>
-</svg><div id="spTxt">نيو لايف<small>معرض الأدوات المنزلية</small></div></div>
-<script>
-(function(){
-var d=document,de=d.documentElement,sp=d.getElementById("splash");if(!sp)return;
-de.classList.add("splash-on");
-var heart=d.getElementById("spHeart"),pen=d.getElementById("spPen"),logo=d.getElementById("spLogo"),txt=d.getElementById("spTxt");
-var done=false;
-function end(){if(done)return;done=true;sp.classList.add("out");de.classList.remove("splash-on");setTimeout(function(){sp.remove()},700)}
-sp.addEventListener("click",end);setTimeout(end,8000);
-var L=heart.getTotalLength();heart.style.strokeDasharray=L;heart.style.strokeDashoffset=L;
-var reduce=matchMedia("(prefers-reduced-motion:reduce)").matches;
-function reveal(){heart.classList.add("fill");pen.classList.add("gone");logo.classList.add("show");txt.classList.add("show");setTimeout(end,reduce?1200:2100)}
-if(reduce){heart.style.strokeDashoffset=0;setTimeout(reveal,200);return}
-var DUR=2300,t0=null;
-function ease(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2}
-function step(ts){
-  if(done)return;if(t0===null)t0=ts;
-  var k=Math.min((ts-t0)/DUR,1),e=ease(k),len=e*L,pt=heart.getPointAtLength(len);
-  heart.style.strokeDashoffset=L-len;
-  pen.style.opacity=1;pen.setAttribute("transform","translate("+pt.x+" "+pt.y+") rotate("+(Math.sin(k*18)*3)+")");
-  if(k<1)requestAnimationFrame(step);else setTimeout(reveal,120);
-}
-requestAnimationFrame(step);
-})();
-</script>
-<div id="pg"></div>
-<div class="bar"><img src="Logo.png" alt="" onerror="this.style.display='none'"><b id="home" role="button" tabindex="0">نيو لايف<small>معرض الأدوات المنزلية</small></b><a class="ic" id="mapBtn" href="https://maps.app.goo.gl/AmFcGRpZ9ZgyuqoG7" target="_blank" rel="noopener" aria-label="الموقع على الخريطة">🗺️</a><a class="ic" id="callBtn" href="#contact">📞</a></div>
-<div class="hero"><h2>جهّز بيتك بأحسن الأسعار</h2><p>أدوات منزلية • أجهزة كهربائية • تجهيز عرائس</p><a href="#" id="heroWa">اسأل عن منتج 💬</a></div>
-<div class="tick"><div class="tk" id="tk"></div></div>
-<div class="sw"><label class="search"><span>🔍</span><input id="q" type="search" placeholder="ابحث عن منتج..." autocomplete="off"></label></div>
-<div class="cats" id="cats"></div>
-<div class="list" id="list"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
-<section class="rv"><h2>⭐ آراء عملائنا</h2><div class="rvs" id="rvs"><div class="rvc">جاري التحميل...</div></div>
-<div class="rf"><input id="rn" placeholder="اسمك" maxlength="40"><select id="rs"><option value="5">★★★★★ ممتاز</option><option value="4">★★★★ جيد جداً</option><option value="3">★★★ جيد</option><option value="2">★★ مقبول</option><option value="1">★ ضعيف</option></select><textarea id="rt" rows="3" placeholder="اكتب رأيك..." maxlength="300"></textarea><button id="rb">نشر التقييم</button></div></section>
-<footer id="contact"><h4>تواصل معنا</h4><p>📍 سجين الكوم - مركز قطور - الغربية</p><div id="cl"></div></footer>
-<a class="fab" id="fab" href="#">💬</a>
-<button class="up" id="up" aria-label="للأعلى">↑</button>
-<div class="sh" id="sh"><button class="x" id="sx">✕</button><div class="bx" id="bx"></div></div>
-<div class="toast" id="toast"></div>
-<script>
-const CONFIG={whatsapp:"201091076268",phones:["01091076268"],email:"",maps:"https://maps.app.goo.gl/AmFcGRpZ9ZgyuqoG7",facebook:"https://www.facebook.com/profile.php?id=100065208172370&locale=ar_AR",tiktok:"https://www.tiktok.com/@newlife.store.eg"};
-const ICONS={"group-kitchen":"🍳","group-plastics":"🧺","group-glass":"🥂","group-distribution":"🍽️","group-sets":"🍲","group-appliances":"🔌"};
-const $=s=>document.querySelector(s);
-let groups=[],active="all",term="";
-const norm=t=>String(t||"").replace(/[أإآ]/g,"ا").replace(/ى/g,"ي").replace(/ة/g,"ه").replace(/[\u064B-\u0652\u0640]/g,"").toLowerCase().trim();
-const esc=s=>String(s||"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-function toast(m){const t=$("#toast");t.textContent=m;t.style.display="block";setTimeout(()=>t.style.display="none",2600)}
-function wa(text){if(!CONFIG.whatsapp){toast("ضيف رقم الواتساب في CONFIG");return}window.open("https://wa.me/"+CONFIG.whatsapp+"?text="+encodeURIComponent(text),"_blank")}
-const order=n=>wa("مرحباً أيها الحج حسام، عايز أستفسر أو أطلب: "+n+"\nمن موقع نيو لايف");
-function render(){
-  const ok=groups.filter(g=>g.products.length);
-  $("#cats").innerHTML='<button class="cat '+(active==="all"?"on":"")+'" data-g="all"><span>✨</span><em>الكل</em></button>'+
-    ok.map(g=>'<button class="cat '+(active===g.id?"on":"")+'" data-g="'+g.id+'"><span>'+(ICONS[g.id]||"🛒")+'</span><em>'+esc(g.title.replace("مجموعة ",""))+'</em></button>').join("");
-  let h="",n=0;
-  ok.forEach(g=>{
-    if(active!=="all"&&g.id!==active)return;
-    const it=g.products.map((p,i)=>({p,i})).filter(({p})=>!term||norm(p.title+" "+p.desc).includes(term));
-    if(!it.length)return;
-    h+='<div class="t rise">'+esc(g.title)+' <small>('+it.length+')</small></div>'+it.map(({p,i})=>{n++;
-      return '<div class="row rise" data-g="'+g.id+'" data-i="'+i+'"><div class="im">'+(p.badge?'<span class="bd">'+esc(p.badge)+'</span>':'')+'<img loading="lazy" src="'+esc(p.img)+'" alt="" onerror="this.onerror=null;this.src=\'Logo.png\'"></div><div class="tx"><h3>'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p><div class="ac"><button class="wa" data-o="1">💬 اطلب</button><button class="dt">التفاصيل</button></div></div></div>'}).join("");
-  });
-  $("#list").innerHTML=n?h:'<div class="miss"><p style="font-size:2.2rem">🔎</p><p>مفيش نتائج لـ «'+esc($("#q").value)+'»</p><p style="font-size:.85rem">اطلبه من الحج حسام وهنوفره لك</p><button class="wa" id="mq">💬 اطلب هذا المنتج</button></div>';
-  reveal();
-}
-function open_(g,i){const p=groups.find(x=>x.id===g).products[i];
-  $("#bx").innerHTML='<img src="'+esc(p.img)+'" alt="" onerror="this.onerror=null;this.src=\'Logo.png\'"><div class="c"><h3>'+esc(p.title)+'</h3><p>'+esc(p.desc)+'</p></div>';
-  $("#sh").insertAdjacentHTML("beforeend",'<button class="ob" id="so">💬 اطلب عبر واتساب</button>');
-  $("#so").onclick=()=>order(p.orderName||p.title);
-  $("#sh").classList.add("open");document.body.style.overflow="hidden"}
-function close_(){$("#sh").classList.remove("open");document.body.style.overflow="";const b=$("#so");if(b)b.remove()}
-$("#sx").onclick=close_;
-addEventListener("keydown",e=>{if(e.key==="Escape")close_()});
-/* ===== حركات ===== */
-const io="IntersectionObserver" in window?new IntersectionObserver(es=>{let b=0;es.forEach(en=>{if(!en.isIntersecting)return;const t=en.target;t.style.transitionDelay=Math.min(b++,6)*70+"ms";t.classList.add("in");io.unobserve(t);t.addEventListener("transitionend",()=>t.style.transitionDelay="",{once:true})})},{threshold:.08,rootMargin:"0px 0px -30px 0px"}):null;
-function reveal(){document.querySelectorAll(".rise:not(.in)").forEach(e=>io?io.observe(e):e.classList.add("in"))}
-(function(){const m=["🏠 أدوات منزلية","🔌 أجهزة كهربائية","👰 تجهيز عرائس","💬 اطلب مباشرة عبر واتساب","📍 سجين الكوم - مركز قطور","🛒 منتجات متنوعة بأسعار مناسبة"];
-  const one=m.map(x=>"<span>"+x+"</span>").join("");$("#tk").innerHTML=one+one})();
-(function(){const pg=$("#pg"),up=$("#up");let tk=false;
-  addEventListener("scroll",()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{const h=document.documentElement.scrollHeight-innerHeight,y=scrollY;pg.style.transform="scaleX("+(h>0?Math.min(1,y/h):0)+")";up.classList.toggle("show",y>500);tk=false})},{passive:true});
-  up.onclick=()=>scrollTo({top:0,behavior:"smooth"})})();
-const toTop=()=>{close_();scrollTo({top:0,behavior:"smooth"})};
-$(".bar img").onclick=$("#home").onclick=toTop;
-$("#home").onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();toTop()}};
-$("#cats").onclick=e=>{const b=e.target.closest(".cat");if(!b)return;active=b.dataset.g;render();window.scrollTo({top:$(".sw").offsetTop-4,behavior:"smooth"})};
-$("#list").onclick=e=>{
-  if(e.target.closest("#mq")){wa('مرحباً، بحثت عن هذا المنتج ولم أجده في موقع نيو لايف: "'+$("#q").value.trim()+'" - هل يمكن توفيره؟');return}
-  const c=e.target.closest(".row");if(!c)return;const{g,i}=c.dataset;
-  if(e.target.closest("[data-o]")){const p=groups.find(x=>x.id===g).products[i];order(p.orderName||p.title)}else open_(g,i)};
-$("#q").oninput=e=>{term=norm(e.target.value);render()};
-$("#fab").onclick=$("#heroWa").onclick=e=>{e.preventDefault();wa("مرحباً أيها الحج حسام، عايز أستفسر عن منتجات")};
-(function(){let h="";
-  if(CONFIG.maps)h+='<a class="mp" href="'+CONFIG.maps+'" target="_blank" rel="noopener">🗺️ افتح موقعنا على خرائط جوجل</a>';
-  CONFIG.phones.forEach(p=>h+='<a href="tel:'+p+'">📞 '+p+'</a>');
-  if(CONFIG.email)h+='<a href="mailto:'+CONFIG.email+'">✉️ '+CONFIG.email+'</a>';
-  if(CONFIG.facebook)h+='<a href="'+CONFIG.facebook+'" target="_blank" rel="noopener">👍 صفحتنا على فيسبوك</a>';
-  if(CONFIG.tiktok)h+='<a href="'+CONFIG.tiktok+'" target="_blank" rel="noopener">🎵 صفحتنا على تيك توك</a>';
-  $("#cl").innerHTML=h;if(CONFIG.phones[0])$("#callBtn").href="tel:"+CONFIG.phones[0]})();
-const DB="https://new-life-reviews-default-rtdb.firebaseio.com/reviews.json";
-function loadReviews(){fetch(DB).then(r=>r.json()).then(d=>{
-  const a=d?Object.values(d).sort((x,y)=>y.timestamp-x.timestamp).slice(0,30):[];
-  $("#rvs").innerHTML=a.length?a.map(r=>'<div class="rvc"><b>'+"★".repeat(Math.min(5,Math.max(1,+r.stars||5)))+'</b><p>"'+esc(r.text)+'"</p><small>'+esc(r.name)+'</small></div>').join(""):'<div class="rvc">كن أول من يقيّمنا 😊</div>'
-}).catch(()=>{$("#rvs").innerHTML='<div class="rvc">تعذّر تحميل التقييمات</div>'})}
-$("#rb").onclick=()=>{const name=$("#rn").value.trim(),text=$("#rt").value.trim();
-  if(!name||!text){toast("اكتب اسمك ورأيك أولاً");return}
-  fetch(DB,{method:"POST",body:JSON.stringify({name,text,stars:+$("#rs").value,timestamp:Date.now()})})
-  .then(r=>{if(!r.ok)throw 0;toast("تم نشر تقييمك ❤️");$("#rn").value=$("#rt").value="";loadReviews()}).catch(()=>toast("تعذّر النشر"))};
-loadReviews();
-const setBH=()=>document.documentElement.style.setProperty("--bh",document.querySelector(".bar").offsetHeight+"px");setBH();addEventListener("resize",setBH);addEventListener("load",setBH);
-const FALLBACK=[{"id":"group-kitchen","title":"مجموعة الرفايع والمطبخ","products":[{"badge":"جديد","img":"https://bayoumistore.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-15-2026-02_56_04-AM.jpg","title":"منشر استانلس ستيل مستورد","desc":"المنشر التركي الأصلي اللي هيعيش معاكي العمر كله! ✨\nودعي بقع الصدأ والمناشير الضعيفة مع المنشر الستانلس ستيل المستورد من معرض نيولايف. مصمم بالكامل من خامات فائقة الجودة مضادة للصدأ والرطوبة بنسبة 100%، ويوفر لكِ ثباتاً فائقاً في البلكونة وقوة تحمل مذهلة للأوزان الثقيلة والبطاطين دون التواء. استثمري في قطعة عملية أصلية تدوم طويلاً وتمنح غسيلك العناية التي يستحقها!","orderName":"منشر استانلس ستيل مستورد"}]},{"id":"group-plastics","title":"مجموعة البلاستيكات","products":[{"badge":null,"img":"https://m.media-amazon.com/images/I/719K84rBfLL._AC_SX300_SY300_QL70_ML2_.jpg","title":"دولاب ميني ايليت 4 دور الوطنيه","desc":"دولاب بلاستيك مصنوع من مواد بلاستيكيه قويه من شركه الوطنيه","orderName":"دولاب ميني ايليت 4 دور الوطنيه"},{"badge":null,"img":"https://elghazawy.b-cdn.net/254706/dolab-nofa-alotny-3-dor-blastyk-aloan-mtaadd.webp","title":"دولاب نوفا الوطنيه","desc":"دولاب بلاستيك مصنوع من مواد بلاستيكيه قويه من شركه الوطنيه","orderName":"دولاب نوفا الوطنيه"},{"badge":"جديد","img":"E.png","title":"كولمن تانك 12 لتر الاصلي","desc":"الكولمن التانك الشهير بقدرته العاليه عالى الحفاظ علي بروده المياه لمده تصل ل 6 ساعات ❄️❄️❄️","orderName":"كولمن تانك 12 لتر"},{"badge":"جديد","img":"https://egmoll.com/uploads/112/%D8%AA%D8%B1%D8%A7%D8%A8%D9%8A%D8%B2%D9%87-%D8%A8%D8%B1%D9%86%D8%B3%D9%8A%D8%B3%D9%87-%D9%85%D8%AF%D9%88%D8%B1%D9%87-%D8%B1%D8%A7%D8%AA%D8%A7%D9%86-%D8%AE%D9%88%D8%B1%D8%B4%D9%8A%D8%AF.webp","title":"ترابيزه البرنسيسه مدوره خورشيد","desc":"ترابيزه مدوره تجمع بين المرونه والجمال ","orderName":"ترابيزه البرنسيسه مدوره خورشيد"},{"badge":"جديد","img":"basket-sara.png","title":"طقم باسكت تاتش سارة","desc":"مين قال إن باسكت البيت لازم يتدارى؟ 😉 طقم باسكت تاتش (سارة بلاست) المكون من 3 قطع مش مجرد سلة مهملات، ده قطعة ديكور مودرن بتكمل شياكة بيتك! ✨ بلمسة واحدة (تاتش) هيفتح معاكي، وبتصميمه الاسكندنافي بالأرجل الخشبية والغطاء الخشبي الأنيق هينور الريسبشن، الليفينج، أو غرفتك. الطقم بيجيلك 3 مقاسات عشان يغطي كل احتياجات البيت، مع ميزة إخفاء كيس القمامة بالكامل للحفاظ على المظهر الجمالي. اطلبيه دلوقتي وخلي كل ركن في بيتك بيتكلم شياكة! 🌸","orderName":"طقم باسكت تاتش سارة بلاست 3 قطع"},{"badge":"جديد","img":"https://m.media-amazon.com/images/I/71ra7YFNjWL._AC_SX679_.jpg","title":"كرسي فتح و قفل متنقل ","desc":"لا تشيل هم القعدة بعد اليوم مع كرسي نيو لايف الذكي القابل للطي راحتك معاك في كل مكان خفيف الوزن قابل لتعديل الطول ويتحمل حتى 130 كجم مثالي للمصايف والحدائق والرحلات اضغط هنا واكتشف المفهوم الجديد للمنتجات العملية","orderName":"كرسي فتح و قفل متنقل"},{"badge":null,"img":"https://z.nooncdn.com/products/tr:n-t_400/pzsku/Z28FC36AD4DB98A4BDA26Z/45/_/1698574994/6bb09c7a-3f5f-4ac5-b2c6-7bdb2b166066.jpg","title":"كرسى مارسيليا خورشيد ابيض","desc":"أقوى وأشيك كرسي في مصر.. مارسيليا خورشيد الأبيض! 🤍💪متانة خورشيد المعروفة بتجتمع مع أرقى تصميم عصري. كرسي مارسيليا الأبيض مصنوع من أفضل خامات البلاستيك المقوى المقاوم للصدمات وعوامل الجو من شمس ورطوبة. تصميمه المفرغ الذكي بيمنع تجمع المياه وسهل التنظيف جداً بمسحة واحدة. وزنه خفيف لسهولة النقل، وقواعده مصممة بثبات عالي عشان يضمن لك الأمان الكامل والراحة لأي حد يقعد عليه. الاختيار الصح لراحة عيلتك وضيوفك!","orderName":"كرسى مارسيليا خورشيد ابيض"}]},{"id":"group-glass","title":"مجموعة الزجاج و الخزفيات","products":[]},{"id":"group-distribution","title":"مجموعة أطقم التوزيع و الحوافظ و الترامس","products":[]},{"id":"group-sets","title":"مجموعة الأطقم الفاخرة","products":[{"badge":null,"img":"https://www.raneen.com/media/catalog/product/h/o/ho1062938slv_ipx2b5jx5y6mhjuq.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=700&width=700&canvas=700:700","title":"طقم استانلس عبود اوليندا 10 قطع","desc":"يعد طقم حلل استانلس عبود أوليندا المكون من عشر قطع خيارا ممتازا للمطبخ لأنه مصنوع من الاستانلس ستيل النقي عيار ثمانية عشر على عشرة المقاوم للصدأ والتآكل ويمتاز هذا الطقم بقاعدة سميكة تضمن توزيعا مثاليا وعادلا للحرارة لمنع حرق الطعام وتأتي الحلل بخمسة مقاسات مختلفة تبدأ من ثمانية عشر حتى ثمانية وعشرين سنتيمترا لتناسب كافة احتياجات الطهي اليومي كما أن المقابض والأغطية المصنوعة من الاستانلس بالكامل تجعله آمنا للاستخدام داخل الفرن وسهل التنظيف في غسالة الأطباق ومناسبا لجميع أنواع المواقد الحديثة والتقليدية","orderName":"طقم استانلس عبود اوليندا 10 قطع"},{"badge":"جديد","img":"bastalat-aboud.jpg","title":"طقم بستلات عبود 3 قطع","desc":"طقم بستلات عبود الأصلي المكوّن من 3 قطع من أجود خامات الاستانلس ستيل 🔥🔥🔥","orderName":"طقم بستلات عبود 3 قطع"},{"badge":null,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1LVBwahG7XUUAbcU7XXD1iZ1zhQXU2r1MSFewufsm3JpTZfm4Mh1XTm8&s=10","title":"طقم حلل استانلس لينز دهبي","desc":"هذا الطقم التركي المميز من ماركة لاينز يعتبر خيارا مثاليا لكل مطبخ عصري حيث يتكون من عشر قطع تشمل خمس حلل بأحجام متنوعة تبدأ من مقاس ثمانية عشر وتصل إلى ثمانية وعشرين سنتيمترا لتلبي كافة احتياجات الطهي اليومية وهو مصنوع من الستانلس ستيل عالي الجودة المقاوم للصدأ والتآكل مع قاعدة حرارية ثلاثية سميكة تحتوي على طبقة ألومنيوم داخلية تضمن توزيعا متوازنا للحرارة لمنع احتراق الطعام كما يتميز بتصميم فريد يجمع بين الهيكل الفضي المصقول والشريط الذهبي الأنيق والمقابض الثابتة التي تمنحه مظهرا فخما يضيف لمسة من الأناقة والجمال إلى أدوات مطبخك","orderName":"طقم حلل استانلس لينز دهبي"},{"badge":null,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnEFMSWaX4zEG3a04UqF5H3kh0u-0glvZ5DjaR5IEZxdBuk6FtF_mipA&s=10","title":"طقم حلل تيفال بونتي","desc":"هذا الطقم التركي المكون من تسع قطع يجمع بين الأناقة والعملية بفضل لونه البنفسجي المميز وتصميمه العصري الذي يناسب المطابخ الحديثة، وهو مصنوع من الألومنيوم عالي الجودة المبطن بطبقة غير لاصقة تمنع التصاق الطعام وتسهل عملية التنظيف، كما يأتي بسمك يبلغ أربعة مللي لضمان التوزيع الحراري المتساوي والاحتفاظ بالحرارة لفترة أطول أثناء الطهي، وتتنوع محتوياته لتشمل أربع حلل طهي بمقاسات مختلفة مع أغطيتها بالإضافة إلى مقلاة جريل مربعة مخططة ومزودة بمقبض طويل لشيّ اللحوم والخضروات بكفاءة.","orderName":"طقم حلل تيفال بونتي 9 قطع"},{"badge":null,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsFciVy8uL9uw9jakEoRUNdpIbJUHVyI3Sxe0W-NnIQA&s=10","title":"طقم حلل جرانيت جلوري موديل كوري","desc":"طقم حلل جرانيت جلوري يمنع من التصاق الطعام به مصنوع علي الموديل التركي","orderName":"طقم حلل جيرانيت جلوري موديل كوري"},{"badge":null,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnl_aYtc6PtN3pLsaeie-VNr9aI1rqr-Yjzgd46_ZVFA&s","title":"طقم حلل جرانيت ecoten","desc":"جمال مطبخك يبدأ من شياكة حللك ✨🛒جددي مطبخك أو جهزي بيتك بأجمل طقم جرانيت تركي أصلي من إيكوتن باللون البني الغامق البرونزي الساحر 🤎 طقم 9 قطع متكامل يجمع بين المتانة العالية والتصميم العصري اللي يخطف العين 😍 طبقات جرانيت آمنة وصحية 100% لخلوها من الرصاص، وقاعدة ذكية بتوزع الحرارة بالتساوي عشان أكلك يطلع مظبوط كل مرة 🥘 المقابض عازلة للحرارة تماماً عشان تطبخي براحتك وبأمان 👩‍🍳الكمية محدودة جداً.. احجزيه دلوقتي ونورّي مطبخك بلمسة تركية فاخرة 🇹🇷💎","orderName":"طقم حلل جيرانيت ecoten 9 قطع"},{"badge":null,"img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQam3IErxdVfGMalAxQO3gZQtp8CZ2RseKcp8MIZDznfg&s","title":"طقم حلل سيراميك Arz celik","desc":"لأن مطبخك يستحق الفخامة والراحة.. طقم حلل أرزو كليك التركي وصل! ✨جمال التصميم التركي يلتقي مع صلابة الجرانيت الصحي الخالي تماماً من المواد الضارة. انسي تماماً مشكلة التصاق الطعام أو احتراقه، واطبخي بأقل نقطة زيت لصحة عائلتك! الطقم متكامل ويضم تشكيلة حلل متنوعة تناسب كل طبخاتك، بالإضافة إلى جريل مميز للمشويات وهدية ماسكات سيليكون حرارية. شياكة في مطبخك، وتوزيع حراري مثالي يوفر وقتك وطاقتك. اطلبيه الآن واجعلي الطبخ متعة يومية! 🍳❤️","orderName":"طقم حلل سيراميك Arz celik 9قطع"},{"badge":null,"img":"https://m.media-amazon.com/images/I/71sWFncAd+L.jpg","title":"طقم ميلامين بيور مربع 38 قطعه","desc":"السهل الممتنع في مطبخك! 🔥 طقم عشاء ميلامين بيور 38 قطعة بتصميمه المربع العصري اللي قالب الدنيا. شياكة تشرفك قدام ضيوفك، وخامة ثقيلة ومقاومة للكسر تستحمل معاكي المطبخ والاستخدام اليومي وغسالة الأطباق بأمان تام. الطقم كامل متكامل لـ 6 أفراد وبأشكال وميكسات ألوان تجنن.. اطلبيه دلوقتي وجددي سفرتك! 🍽️","orderName":"طقم ميلامين بيور مربع 38 قطعه"},{"badge":null,"img":"ميلامين1.jpg","title":"طقم ميلامين \"المهندس\" 38 قطعة","desc":"لكل عروسة بتدور على الشياكة والتميز، ولكل ست بيت بتعشق التجديد! سِفرتك مش مجرد مكان للأكل، دي لوحة فنية بتعبر عن ذوقك. بنقدملك طقم ميلامين المهندس 38 قطعة بتصميم \"الأوف وايت والروز\" الساحر مع نقشة الفراشات والزهور الرقيقة. ميكس ألوان يفتح النفس ويخطف العين من أول نظرة. جودة ماليزية ونقاء 100% بيتحمل الاستخدام اليومي والعزومات. اطلبيه دلوقتي وخلي سِفرتك تملى البيت بهجة ودلع! 🌸","orderName":"طقم ميلامين المهندس 38 قطعه"},{"badge":null,"img":"صيني.jpg","title":"طقم صيني مستورد 66ق البركه","desc":"لأن سفْرتك هي عنوان ذوقك قدام ضيوفك، بنقدملك طقم عشاء بورسلين Bright Future المتكامل 66 قطعة! 🍽️ الطقم اللي هيغنيكي عن أي حاجة تانية؛ لأنه بيجمع بين التصميم العصري الراقي والمتانة العالية اللي بتدوم سنين. نقشة فضية هادية ورقيقة جداً بتضيف لمسة ملوكية على مائدتك في العزومات والمناسبات الكبيرة، وبتخليه قطعة أساسية لا غنى عنها في جهاز كل عروسة بتدور على الفخامة والتميز. خلي مائدتك تبهر الجميع واطلبيه دلوقتي! 👑","orderName":"طقم صيني مستورد 66ق البركه"},{"badge":null,"img":"اركوبال.jpg","title":"طقم اركوبال مربع 58ق","desc":"اجمعي بين قوة التحمل والأناقة في طقم واحد! بنقدملك طقم عشاء أركوبال مربع متكامل 58 قطعة، المصنوع من خامة الأركوبال النقي ، والآمن تماماً للاستخدام اليومي في غسالة الأطباق والميكروويف. الطقم بيتميز بستايل مربع غاية في الرقة والشياكة مع تشكيلة قطع شاملة لكل احتياجات سِفرتك من أطباق غرف، وبولات شوربة، وفناجين. اختيار ذكي وعملي يعيش معاكي العمر كله! 🌟","orderName":"طقم اركوبال مربع 58ق"},{"badge":"جديد","img":"https://m.media-amazon.com/images/I/71P5M4jZgTL._AC_UF894,1000_QL80_.jpg","title":"طقم عشا 47 فلو الوطنية","desc":"وداعاً لكسر الأطباق وبهدلة العزومات! 🍽️✨سفريتك هتنور مع طقم عشاء فلو (47 قطعة) من الوطنية، الميكس المثالي بين شياكة الأوبالين وعملية البلاستيك الصحي! طقم متكامل من أطباق الغرف، البولات، السرافيس، وحتى الكبايات بلون وتصميم \"فلو\" الانسيابي الفخم. مصنوع من مادة PP5 الصحية الآمنة بالكامل على عيلتك، وبيدخل الميكروويف وغسالة الأطباق بكل أمان. استمتعي بلمّة عيلتك وعزوماتك بدون قلق من الكسر وبلون ثابت يعيش العمر كله!","orderName":"طقم عشا 47 قطعة فلو الوطنية"},{"badge":null,"img":"https://m.media-amazon.com/images/I/71SFIXnp8EL.jpg","title":"طقم شاي و جاتوه لوتس ابيض رسمه الشجره","desc":"الجمال يبدأ من تفاصيل ضيافتكِ! ✨✨لكل من تبحث عن التميز والانفراد، طقم شاي وجاتوه بورسلين من \"لوتس\" الفاخر بنقشة الشجرة الذهبية الساحرة. قطعة فنية فريدة تجمع بين بياض البورسلين النقي ولمسة الذهب الراقية لتجعل كل جمعة مع عائلتكِ أو ضيوفكِ لوحة تعبر عن ذوقكِ الرفيع. متوفر الآن بكمية محدودة، لا تترددي في اقتنائه!","orderName":"طقم شاي و جاتوه ابيض لوتس رسمه شجره"}]},{"id":"group-appliances","title":"مجموعة الأجهزة الكهربائية","products":[{"badge":null,"img":"https://robot-egy.com/wp-content/uploads/2025/12/%D8%A7%D9%84%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%AA%D8%B1%D9%83%D9%8A-1.webp","title":"محضر طعام 8 وظائف كراشر1000وات روبوت – Robot","desc":"يتميز الجهاز بمحرك نحاسي بالكامل، و 15 سرعة مختلفة مع شفرات من الفولاذ المقاوم للصدأ و يتضمن الجهاز 8 وظائف في جهاز واحد، تشمل الخلاط، الكبة، والمطحنة و يأتي المنتج مع ضمان لمدة سنة كامله.","orderName":"محضره طعام روبوت 1000وات"},{"badge":null,"img":"https://makka.store/wp-content/uploads/2024/06/LM241B25-7.webp","title":"خلاط مولينكس الأصلي (موديل LM242) بقدرة 500 واط وسعة 1.75","desc":"خلاط مولينكس الأصلي (موديل LM242) بقدرة 500 واط وسعة 1.75 لتر باللون الأبيض.يتميز بشفرات من الستانلس ستيل المتين لخلط فعال ومزود بمطحنة ومبشرة و صنع في فرنسا ويقدم سرعة واحدة بالإضافة إلى خاصية النبض للتحكم الكامل.","orderName":"خلاط مولينكس الأصلي (موديل LM242) بقدرة 500 واط وسعة 1.75"},{"badge":"جديد","img":"https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT9mxf0UEUbzWjj4PdfyEf_WgrcL4pILUOwsRo_GS47PvJJNylYR4FiXPkWz77qIyJOJWdT5QLMCGwkTGnhW7bSjlU1K6nHkCmlICK79g5ILJ0SKyvZj8mS&usqp=CAc","title":"الغسالة القابلة للطي متعددة الوظائف","desc":"الغسالة القابلة للطي متعددة الوظائف هي الرفيق المثالي للمساحات الضيقة والرحلات، حيث تجمع بين التصميم الذكي والأداء العملي، وتتميز بهيكل مرن يتيح طيها وتخزينها بكل سهولة في حقيبة السفر أو تحت الحوض. ورغم صغر حجمها فإنها توفر وظائف مزدوجة تشمل الغسيل والتعقيم بالإضاءة الزرقاء، بالإضافة إلى سلة مخصصة لعصر وتجفيف الملابس الخفيفة مثل الجوارب وملابس الأطفال. وتعمل بكفاءة عالية في توفير الماء والكهرباء، مما يجعلها خياراً اقتصادياً ومريحاً للاستخدام اليومي السريع.","orderName":"الغسالة القابلة للطي متعددة الوظائف"},{"badge":"جديد","img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTie1DemgrtaDccUhKE6oa9i0PBL00Qc1TnZODUtm6New&s=10","title":"كتل تورنادو 1.7 لتر","desc":"زهقت من الكاتل اللي بيصدي أو بيبوظ بعد شهرين؟ غيّر لـ تورنيدو 1.7 لتر ستانلس ستيل وانسى المشاكل دي تماماً! جهاز يعيش معاك العمر كله، بتصميم شيك يزين مطبخك، ونافذة مياه ذكية عشان تغلي على قد احتياجك بالظبط. مش بس كده، معاه خدمة ما بعد البيع الأقوى في مصر من العربي. جودة تعتمد عليها وسعر على قد الإيد. اطلب المنتج الآن واستمتع بمشروبك الساخن في ثواني!","orderName":"كتل تورنادو 1.7 لتر"},{"badge":"جديد","img":"https://m.media-amazon.com/images/I/51Be8WgTSLL.jpg","title":"اير فراير سوكانى 5 لتر ديجيتال","desc":"الأكل المقرمش اللي بتحبيه من غير نقطة زيت واحدة! 🍟🍗 وفّري في ميزانية الزيت واحمِي صحة أولادك مع قلاية سوكاني 5 لتر الديجيتال! بلمسة واحدة على شاشتها الذكية، هتعملي أحلى بطاطس مقرمشة، فراخ بروستد، وسمك مشوي في دقائق وبأقل مجهود. سعتها الكبيرة بتشيل فرخة كاملة، وسعرها على قد الإيد ومنافس لأي ماركة تانية. صحتك وصحة عيلتك تستاهل.. اطلبيها دلوقتي قبل نفاذ الكمية! 🛒✨","orderName":"اير فراير سوكانى 5 لتر ديجيتال"},{"badge":"جديد","img":"https://api.cezma.cloud/storage/thumbnails/products/web/17623937701000335496.jpg","title":"محضر طعام هفار ٧ وظائف ٨٠٠٠ وات","desc":"يتميز خلاط هفار (HVAR) بقدرة محرك تصل إلى 8000 وات وتتضمن المجموعة عادةً عدة ملحقات، مثل دورق سعة 3 لتر ضد الكسر، ومطحنة للتوابل، وقد يحتوي على 7 وظائف في جهاز واحد ويعمل بمحرك نحاسي ويوفر سرعات متعددة لتحضير العصائر، طحن البهارات، وتقطيع اللحوم.","orderName":"محضر طعام هفار ٧ وظائف ٨٠٠٠ وات"},{"badge":"جديد","img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHsNfGcSiqVWodxqLW2VB2L7f85QUVwqxBXHT79se6xg&s=10","title":"اير فراير روبوت","desc":"إيرفراير روبوت (Robot Air Fryer) هي الخيار المثالي لكل من يبحث عن قرمشة غنية بطعم لذيذ وصحي وبأقل مجهود. بفضل تقنياتها الذكية مثل نظام التسخين المزدوج (2 هيتر) والواجهة الزجاجية الأنيقة، تمنحكِ قلاية روبوت طهياً سريعاً ومتساوياً يحافظ على طراوة الطعام من الداخل دون الحاجة للتقليب، لتكون المساعد الذكي والأشيك في مطبخك العصري.","orderName":"اير فراير روبوت"},{"badge":"جديد","img":"https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQXqdWuCiWzeluk9mZycnacGn3qzyCYt8HLqX31YlahkcbEhBa2-s2grvOplGjDdeGkDRTJKeFrCzNfhHdqgb4T01womqvTDDDzFZSOlJVtEAwchlua_SjwBpD8XMnqMFzxJRzgfy4&usqp=CAc","title":"هاند بلندر تورنيدو 1000 وات (موديل THB-1000MK)","desc":"أضيفي لمسة من الكفاءة التركية إلى مطبخك مع هذا الجهاز المتكامل الذي يغنيكِ عن أدوات كثيرة. يأتي بمحرك قوي للغاية بقوة 1000 وات لخلط، فرم، وخفق المكونات في ثوانٍ معدودة. ذراع الخلاط مصنوع بالكامل من الستانلس ستيل عالي الجودة ليتحمل الحرارة العالية، مما يتيح لكِ هرس الشوربات والصوصات الساخنة داخل الحلة مباشرة بكل أمان.","orderName":"هاند بلندر تورنيدو 1000 وات THB-1000MK"},{"badge":"جديد","img":"https://m.media-amazon.com/images/I/514Zvm2ptvS.jpg","title":"محضرة قهوة أمريكان أوتوماتيك تورنيدو 1.5 لتر أسود TCMA-1015-B","desc":"ابدأ يومك بالطاقة التي تستحقها! مع ماكينة قهوة تورنيدو TCMA-1015-B، لن تحتاج لانتظار دورك في الكافيه بعد الآن. بلمسة زر واحدة وقوة 1000 واط، ستحصل على كوب قهوة أمريكان غني، ساخن، ومثالي يضبط مزاجك في ثوانٍ. بفضل سعتها الكبيرة (1.5 لتر)، هي الرفيق المثالي لصباحك الفردي أو لتجمعاتك العائلية. لا تتنازل عن فنجانك المثالي بعد اليوم – اطلبها الآن واجعل صباحك أجمل!","orderName":"محضرة قهوة أمريكان تورنيدو 1.5 لتر أسود TCMA-1015-B"},{"badge":"جديد","img":"https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_auto/https://centeralealami.com/wp-content/uploads/2025/07/1741219576815701644.jpg","title":"عجان هفار 7 لتر (1800 وات)","desc":"هل تبحثين عن شريك مثالي يحول شغفك بالخبيز إلى روائع احترافية؟ عجان هفار 7 لتر بقوة 1800 وات صُمم خصيصاً ليتحمل أثقل العجائن دون كلل. بموتور نحاسي بالكامل وتروس معدنية غير قابلة للتآكل، يضمن لكِ قواماً مثالياً للكيك، ونعومة لا تُقاوَم للمخبوزات. اختصري الوقت، ضاعفي إنتاجك، واجعلي من مطبخك مخبزاً فخماً بضغطة زر واحدة!","orderName":"عجان هفار 7 لتر 1800 وات"}]}];
-const setData=d=>{groups=(Array.isArray(d)?d:(d.groups||[])).map(g=>({...g,products:g.products||[]}));render()};
-fetch("products-data.json?v="+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error("الملف مش موجود ("+r.status+")");return r.text()}).then(t=>setData(JSON.parse(t))).catch(e=>{
-  setData(FALLBACK);const b=document.createElement("div");
-  b.style.cssText="background:#fff3cd;color:#664d03;padding:12px 14px;margin:10px 14px;border-radius:12px;font-size:.85rem;direction:ltr;text-align:left";
-  b.textContent="products-data.json error: "+e.message;document.body.insertBefore(b,$(".sw"))});
-</script>
-</body>
+        <a
+          class="header-cta"
+          href="https://wa.me/201091076268?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D9%86%D9%8A%D9%88%20%D9%84%D8%A7%D9%8A%D9%81"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          تواصل واتساب
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container site-main">
+      <!-- View 1: Storefront -->
+      <section id="view-store" class="view-stack">
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+          <div class="hero-layout">
+            <div>
+              <p class="hero-sub">معرض الأدوات المنزلية · سجين الكوم - مركز قطور - محافظة الغربية</p>
+              <h1 class="hero-title">جهّز بيتك بأحسن الأسعار</h1>
+              <p class="hero-desc">
+                أدوات منزلية · أجهزة كهربائية · تجهيز عرائس ·
+                <span id="heroProductsCount">0</span> منتج متاح ومحدث تلقائياً
+              </p>
+
+              <div class="hero-actions-row">
+                <div class="hero-buttons">
+                  <a
+                    class="btn btn-crimson"
+                    href="https://wa.me/201091076268?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D8%A3%D9%8A%D9%87%D8%A7%20%D8%A7%D9%84%D8%AD%D8%AC%20%D8%AD%D8%B3%D8%A7%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%B3%D8%AA%D9%81%D8%B3%D8%B1%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%20%D9%85%D8%B9%D8%B1%D8%B6%20%D9%86%D9%8A%D9%88%20%D9%84%D8%A7%D9%8A%D9%81"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    اسأل الحج حسام واتساب
+                  </a>
+                  <button type="button" class="btn btn-glass" id="heroAccountBtn" data-nav="account">
+                    دخول العملاء وحفظ القائمة
+                  </button>
+                </div>
+
+                <div class="hero-logo-mobile">
+                  <img src="./Logo.png" alt="شعار معرض نيو لايف" />
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-logo-desktop">
+              <img src="./Logo.png" alt="شعار معرض نيو لايف" />
+            </div>
+          </div>
+        </section>
+
+        <!-- Ticker Strip -->
+        <div class="ticker-wrap" aria-label="مميزات المعرض">
+          <div class="ticker-track" id="tickerTrack"></div>
+        </div>
+
+        <!-- Search & Category Filter -->
+        <section class="search-controls">
+          <div class="search-row">
+            <div class="search-box">
+              <span class="search-icon" aria-hidden="true">🔍</span>
+              <input
+                id="searchInput"
+                type="search"
+                class="search-input"
+                placeholder="ابحث عن خلاط، طقم حلل، اير فراير، كولمن..."
+                aria-label="ابحث عن منتج"
+              />
+              <button
+                type="button"
+                id="clearSearchBtn"
+                class="search-clear hidden"
+                aria-label="مسح البحث"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div class="search-actions">
+              <button type="button" id="askAiFromSearchBtn" class="btn btn-navy">
+                اسأل المساعد الذكي
+              </button>
+              <button
+                type="button"
+                id="refreshCatalogBtn"
+                class="btn btn-light"
+                title="تحديث الأصناف"
+              >
+                ↻
+              </button>
+            </div>
+          </div>
+
+          <div class="categories-row" id="categoryTabs"></div>
+        </section>
+
+        <!-- Catalog Container -->
+        <div id="catalogContainer" class="view-stack"></div>
+
+        <!-- Customer Reviews -->
+        <section id="reviews" class="view-stack" style="padding-top: 16px; border-top: 1px solid var(--line)">
+          <div class="group-header">
+            <h2 class="group-title">آراء عملاء نيو لايف</h2>
+            <span class="group-count" id="reviewsCountBadge"></span>
+          </div>
+
+          <div class="reviews-grid">
+            <form id="reviewForm" class="card">
+              <h3 style="margin: 0 0 12px; font-size: 16px">أضف تقييمك للمعرض</h3>
+              <div class="field-group">
+                <label class="field-label" for="revName">الاسم</label>
+                <input id="revName" type="text" class="field-control" required placeholder="مثال: أم محمد" />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="revCity">البلد / القرية (اختياري)</label>
+                <input id="revCity" type="text" class="field-control" placeholder="سجين الكوم" />
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="revRating">التقييم</label>
+                <select id="revRating" class="field-control">
+                  <option value="5">★★★★★ (ممتاز)</option>
+                  <option value="4">★★★★☆ (جيد جداً)</option>
+                  <option value="3">★★★☆☆ (جيد)</option>
+                  <option value="2">★★☆☆☆ (مقبول)</option>
+                  <option value="1">★☆☆☆☆ (ضعيف)</option>
+                </select>
+              </div>
+              <div class="field-group">
+                <label class="field-label" for="revComment">رأيك</label>
+                <textarea id="revComment" class="field-control" required placeholder="اكتب رأيك في المنتجات والخدمة..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-crimson" style="width: 100%">نشر التقييم</button>
+            </form>
+
+            <div class="review-list" id="reviewsList"></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- View 2: AI Chat Assistant -->
+      <section id="view-chat" class="hidden">
+        <div class="chat-shell">
+          <div class="chat-header">
+            <div>
+              <strong style="font-size: 15px">المساعد الذكي — معرض نيو لايف</strong>
+              <div style="font-size: 11px; opacity: 0.8">
+                اسأل عن أي منتج أو خامة أو جهاز عروسة باللهجة المصرية
+              </div>
+            </div>
+            <button type="button" id="newChatBtn" class="btn btn-glass" style="min-height: 36px; font-size: 12px">
+              محادثة جديدة
+            </button>
+          </div>
+
+          <div class="chat-messages" id="chatMessages"></div>
+
+          <div class="chat-chips" id="chatQuickChips">
+            <button type="button" class="cat-btn" data-chip="عندكم اير فراير ايه؟">
+              عندكم اير فراير ايه؟
+            </button>
+            <button type="button" class="cat-btn" data-chip="رشحلي طقم حلل للعروسة">
+              رشحلي طقم حلل للعروسة
+            </button>
+            <button type="button" class="cat-btn" data-chip="عامل ايه وايه اخبار الاسعار">
+              أخبار الأسعار
+            </button>
+            <button type="button" class="cat-btn" data-chip="عنوان المعرض فين بالظبط؟">
+              عنوان المعرض
+            </button>
+          </div>
+
+          <form class="chat-form" id="chatForm">
+            <input
+              id="chatInput"
+              type="text"
+              class="field-control"
+              placeholder="اكتب سؤالك هنا..."
+              autocomplete="off"
+            />
+            <button type="submit" id="chatSendBtn" class="btn btn-crimson">إرسال</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- View 3: Customer Account / Wishlist / Viewed History -->
+      <section id="view-account" class="view-stack hidden">
+        <div class="card" id="accountAuthCard"></div>
+
+        <div class="two-col">
+          <div class="card">
+            <div class="group-header" style="margin-bottom: 12px">
+              <h2 class="group-title" style="font-size: 16px">قائمة العروسة والمفضلة</h2>
+              <button type="button" id="sendWishlistWaBtn" class="btn btn-whatsapp" style="min-height: 36px; font-size: 12px">
+                إرسال لواتساب
+              </button>
+            </div>
+            <div id="wishlistContainer" class="view-stack"></div>
+          </div>
+
+          <div class="card">
+            <div class="group-header" style="margin-bottom: 12px">
+              <h2 class="group-title" style="font-size: 16px">سجل المشاهدات الأخيرة</h2>
+              <button type="button" id="clearHistoryBtn" class="btn btn-light" style="min-height: 36px; font-size: 12px">
+                مسح السجل
+              </button>
+            </div>
+            <div id="viewedHistoryContainer" class="view-stack"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- View 4: Owner Dashboard (eh1329706@gmail.com only) -->
+      <section id="view-admin" class="view-stack hidden">
+        <div id="ownerGateCard" class="card empty-box hidden">
+          <h2 class="group-title">لوحة تحكم المالك — معرض نيو لايف</h2>
+          <p style="font-size: 13px; color: var(--muted)">
+            هذا القسم مخصص لمالك المعرض فقط لإدارة الأصناف ومتابعة العملاء.
+          </p>
+          <button type="button" id="ownerLoginBtn" class="btn btn-navy">
+            تسجيل دخول المالك بحساب Google
+          </button>
+        </div>
+
+        <div id="ownerContent" class="view-stack hidden">
+          <div class="card" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px">
+            <div>
+              <h2 class="group-title">لوحة تحكم الحج حسام</h2>
+              <p style="margin: 4px 0 0; font-size: 12px; color: var(--muted)">
+                إدارة كاملة للأصناف ومتابعة قائمة كل عميل بشكل لحظي
+              </p>
+            </div>
+            <div class="tab-pills">
+              <button type="button" class="cat-btn active" id="ownerTabProducts">إدارة الأصناف</button>
+              <button type="button" class="cat-btn" id="ownerTabCustomers">العملاء</button>
+            </div>
+          </div>
+
+          <!-- Owner Products Panel -->
+          <div id="ownerProductsPanel" class="two-col">
+            <form id="ownerProductForm" class="card">
+              <h3 id="ownerFormHeading" style="margin: 0 0 12px; font-size: 16px">إضافة صنف جديد</h3>
+              <input type="hidden" id="ownerEditTargetKey" />
+              <input type="hidden" id="ownerEditDocId" />
+
+              <div class="field-group">
+                <label class="field-label" for="ownerProdGroup">القسم</label>
+                <select id="ownerProdGroup" class="field-control">
+                  <option value="group-appliances">مجموعة الأجهزة الكهربائية</option>
+                  <option value="group-sets">مجموعة الأطقم الفاخرة</option>
+                  <option value="group-plastics">مجموعة البلاستيكات</option>
+                  <option value="group-kitchen">مجموعة الرفايع والمطبخ</option>
+                  <option value="group-glass">مجموعة الزجاج و الخزفيات</option>
+                  <option value="group-distribution">مجموعة أطقم التوزيع و الحوافظ و الترامس</option>
+                </select>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="ownerProdTitle">اسم الصنف</label>
+                <input id="ownerProdTitle" type="text" class="field-control" required />
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="ownerProdDesc">الوصف</label>
+                <textarea id="ownerProdDesc" class="field-control" required></textarea>
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="ownerProdImg">رابط الصورة (أو اتركه للشعار)</label>
+                <input id="ownerProdImg" type="text" class="field-control" placeholder="https://... أو ./Logo.png" />
+              </div>
+
+              <div class="field-group">
+                <label class="field-label" for="ownerProdBadge">شارة (اختياري)</label>
+                <input id="ownerProdBadge" type="text" class="field-control" value="جديد" />
+              </div>
+
+              <div style="display: flex; gap: 8px">
+                <button type="submit" class="btn btn-crimson" style="flex: 1">حفظ الصنف</button>
+                <button type="button" id="ownerCancelEditBtn" class="btn btn-light hidden">إلغاء</button>
+              </div>
+            </form>
+
+            <div class="card">
+              <div class="group-header" style="margin-bottom: 12px">
+                <h3 style="margin: 0; font-size: 16px">جميع الأصناف (<span id="ownerProductsTotal">0</span>)</h3>
+                <input
+                  id="ownerProdSearch"
+                  type="search"
+                  class="field-control"
+                  style="max-width: 200px; min-height: 36px"
+                  placeholder="بحث سريع..."
+                />
+              </div>
+              <div id="ownerProductsList" class="view-stack" style="max-height: 540px; overflow-y: auto"></div>
+            </div>
+          </div>
+
+          <!-- Owner Customers Panel -->
+          <div id="ownerCustomersPanel" class="two-col hidden">
+            <div class="card">
+              <h3 style="margin: 0 0 12px; font-size: 16px">قائمة العملاء المسجلين</h3>
+              <div id="ownerCustomersList" class="view-stack"></div>
+            </div>
+            <div class="card" id="ownerCustomerDetail">
+              <p style="color: var(--muted); font-size: 13px">اختر عميلاً لعرض مفضلاته ومشاهداته.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px">
+            <img
+              src="./Logo.png"
+              alt="نيو لايف"
+              style="width: 40px; height: 40px; border-radius: 999px; background: #fff; padding: 2px; object-fit: contain"
+            />
+            <div>
+              <strong style="font-size: 15px">نيو لايف</strong>
+              <div style="font-size: 12px; opacity: 0.78">معرض الأدوات المنزلية</div>
+            </div>
+          </div>
+          <p style="margin-top: 10px; font-size: 12px; opacity: 0.8">
+            أدوات منزلية أصلية، أجهزة كهربائية بضمان، وتجهيز كامل للعرائس في سجين الكوم ومركز قطور.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <strong style="color: #fff">التواصل والعنوان</strong>
+          <span>سجين الكوم - مركز قطور - محافظة الغربية</span>
+          <a href="tel:01091076268">هاتف: 01091076268</a>
+          <a href="https://maps.app.goo.gl/AmFcGRpZ9ZgyuqoG7" target="_blank" rel="noopener noreferrer">
+            الموقع على خرائط جوجل
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100065208172370&locale=ar_AR" target="_blank" rel="noopener noreferrer">
+            فيسبوك
+          </a>
+          <a href="https://www.tiktok.com/@newlife.store.eg" target="_blank" rel="noopener noreferrer">
+            تيك توك
+          </a>
+        </div>
+
+        <div class="footer-links">
+          <strong style="color: #fff">روابط الموقع</strong>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
+            <a href="./privacy-policy.html" target="_blank" class="btn btn-glass" style="min-height: 36px; font-size: 12px">
+              سياسة الخصوصية
+            </a>
+            <button type="button" id="navAdminFooter" class="btn btn-glass hidden" data-nav="admin" style="min-height: 36px; font-size: 12px">
+              إدارة المعرض
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Mobile Bottom Tab Bar -->
+    <nav class="mobile-nav" id="mobileNav" aria-label="التنقل على الموبايل">
+      <button type="button" class="mobile-tab active" data-nav="store">
+        <span>🏠</span>
+        <span>المتجر</span>
+      </button>
+      <button type="button" class="mobile-tab" data-nav="chat">
+        <span>🤖</span>
+        <span>المساعد</span>
+      </button>
+      <button type="button" class="mobile-tab" data-nav="account">
+        <span>❤️</span>
+        <span>حسابي (<span id="wishCountMobile">0</span>)</span>
+      </button>
+      <button type="button" class="mobile-tab hidden" id="navAdminMobile" data-nav="admin">
+        <span>🛡️</span>
+        <span>الإدارة</span>
+      </button>
+    </nav>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal-backdrop hidden" role="dialog" aria-modal="true">
+      <div class="modal-card" id="productModalBody"></div>
+    </div>
+
+    <!-- Scroll to Top -->
+    <button type="button" id="scrollTopBtn" class="scroll-top-btn hidden" aria-label="العودة للأعلى">
+      ↑
+    </button>
+
+    <!-- Toast -->
+    <div id="toastBox" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <script src="./products-fallback.js"></script>
+    <script src="./app.js" defer></script>
+  </body>
 </html>
