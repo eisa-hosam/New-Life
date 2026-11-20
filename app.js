@@ -39,6 +39,9 @@ let fbAuth = null;
 let fbDb = null;
 let fbGoogleProvider = null;
 let fbApi = null;
+let firebaseInitPromise = null;
+let unsubUserWishlist = null;
+let unsubUserViewed = null;
 
 const state = {
   activeTab: 'store',
@@ -84,12 +87,19 @@ function normalizeArabic(input) {
     .trim();
 }
 
-function toDocId(key) {
-  let hash = 0;
-  for (let i = 0; i < key.length; i++) {
-    hash = (hash * 31 + key.charCodeAt(i)) | 0;
+function toDocId(rawKey) {
+  let hash1 = 2166136261;
+  let hash2 = 0x811c9dc5;
+  for (let i = 0; i < rawKey.length; i++) {
+    const code = rawKey.charCodeAt(i);
+    hash1 ^= code;
+    hash1 = Math.imul(hash1, 16777619);
+    hash2 ^= code + i;
+    hash2 = Math.imul(hash2, 16777619);
   }
-  return `doc_${Math.abs(hash).toString(36)}_${key.length}`;
+  const h1 = (hash1 >>> 0).toString(16).padStart(8, '0');
+  const h2 = (hash2 >>> 0).toString(16).padStart(8, '0');
+  return `item_${h1}${h2}`;
 }
 
 function resolveImg(img) {
@@ -268,6 +278,7 @@ async function initFirebaseAndSync() {
     const fbApp = appMod.initializeApp(FIREBASE_CONFIG);
     fbAuth = authMod.getAuth(fbApp);
     fbGoogleProvider = new authMod.GoogleAuthProvider();
+    fbGoogleProvider.setCustomParameters({ prompt: 'select_account' });
     fbDb = fsMod.initializeFirestore(
       fbApp,
       { experimentalAutoDetectLongPolling: true },
@@ -275,24 +286,108 @@ async function initFirebaseAndSync() {
     );
     fbApi = { ...authMod, ...fsMod };
 
-    fbAuth &&
-      fbApi.onAuthStateChanged(fbAuth, (user) => {
-        state.user = user;
-        state.isAdmin =
-          !!user?.email && user.email.toLowerCase() === STORE.adminEmail.toLowerCase();
+    fbApi.getRedirectResult(fbAuth).catch((err) => {
+      if (err && err.code) {
+        console.warn('Redirect sign-in note:', err.code, err.message);
+      }
+    });
 
-        document.getElementById('navAdminDesktop').classList.toggle('hidden', !state.isAdmin);
-        document.getElementById('navAdminMobile').classList.toggle('hidden', !state.isAdmin);
-        document.getElementById('navAdminFooter')?.classList.toggle('hidden', !state.isAdmin);
-        document.getElementById('mobileNav').classList.toggle('has-admin', state.isAdmin);
-        document.getElementById('heroAccountBtn').textContent = user
-          ? 'قائمتي وسجل المشاهدات'
-          : 'دخول العملاء وحفظ القائمة';
+    fbApi.onAuthStateChanged(fbAuth, async (user) => {
+      state.user = user;
+      let isOwner =
+        !!user?.email &&
+        user.emailVerified === true &&
+        user.email.toLowerCase() === STORE.adminEmail.toLowerCase();
 
-        if (state.activeTab === 'account') renderAccount();
-        if (state.activeTab === 'admin') renderOwnerDashboard();
-        if (user) void syncCustomerSummary();
-      });
+      if (user && !isOwner) {
+        try {
+          const adminSnap = await fbApi.getDoc(fbApi.doc(fbDb, 'admins', user.uid));
+          isOwner = adminSnap.exists();
+        } catch {
+          isOwner = false;
+        }
+      }
+      state.isAdmin = isOwner;
+
+      document.getElementById('navAdminDesktop').classList.toggle('hidden', !state.isAdmin);
+      document.getElementById('navAdminMobile').classList.toggle('hidden', !state.isAdmin);
+      document.getElementById('navAdminFooter')?.classList.toggle('hidden', !state.isAdmin);
+      document.getElementById('mobileNav').classList.toggle('has-admin', state.isAdmin);
+      document.getElementById('heroAccountBtn').textContent = user
+        ? 'قائمتي وسجل المشاهدات'
+        : 'دخول العملاء وحفظ القائمة';
+
+      if (unsubUserWishlist) {
+        unsubUserWishlist();
+        unsubUserWishlist = null;
+      }
+      if (unsubUserViewed) {
+        unsubUserViewed();
+        unsubUserViewed = null;
+      }
+
+      if (user) {
+        await syncCustomerSummary();
+
+        unsubUserWishlist = fbApi.onSnapshot(
+          fbApi.query(
+            fbApi.collection(fbDb, 'customers', user.uid, 'wishlist'),
+            fbApi.orderBy('createdAt', 'desc'),
+          ),
+          (snap) => {
+            state.wishlist = snap.docs.map((d) => {
+              const data = d.data();
+              return {
+                groupId: String(data.groupId || 'group-appliances'),
+                groupTitle: String(data.groupTitle || 'منتجات المعرض'),
+                product: {
+                  title: String(data.title || ''),
+                  desc: String(data.desc || ''),
+                  img: String(data.img || ''),
+                  orderName: String(data.orderName || data.title || ''),
+                },
+              };
+            });
+            updateWishBadges();
+            renderCatalog();
+            if (state.activeTab === 'account') renderAccount();
+          },
+          () => {},
+        );
+
+        unsubUserViewed = fbApi.onSnapshot(
+          fbApi.query(
+            fbApi.collection(fbDb, 'customers', user.uid, 'viewedHistory'),
+            fbApi.orderBy('lastViewedAt', 'desc'),
+          ),
+          (snap) => {
+            state.viewedHistory = snap.docs.map((d) => {
+              const data = d.data();
+              return {
+                groupId: String(data.groupId || 'group-appliances'),
+                groupTitle: String(data.groupTitle || 'منتجات المعرض'),
+                product: {
+                  title: String(data.title || ''),
+                  desc: String(data.desc || ''),
+                  img: String(data.img || ''),
+                  orderName: String(data.orderName || data.title || ''),
+                },
+              };
+            });
+            if (state.activeTab === 'account') renderAccount();
+          },
+          () => {},
+        );
+      } else {
+        state.wishlist = loadLocal('nl_wishlist', []);
+        state.viewedHistory = loadLocal('nl_viewed', []);
+        updateWishBadges();
+        renderCatalog();
+      }
+
+      if (state.activeTab === 'account') renderAccount();
+      if (state.activeTab === 'admin') renderOwnerDashboard();
+    });
 
     fbApi.onSnapshot(
       fbApi.query(fbApi.collection(fbDb, 'products'), fbApi.orderBy('updatedAt', 'desc')),
@@ -306,6 +401,49 @@ async function initFirebaseAndSync() {
     );
   } catch (err) {
     console.warn('Firebase sync unavailable:', err);
+  }
+}
+
+async function signInWithGoogleWebsite() {
+  if (window.location.protocol === 'file:') {
+    showToast('تسجيل الدخول يعمل عند فتح الموقع عبر رابط استضافة (مثل GitHub Pages)');
+    return;
+  }
+  if (firebaseInitPromise) {
+    await firebaseInitPromise;
+  }
+  if (!fbAuth || !fbApi || !fbGoogleProvider) {
+    showToast('جاري تحميل نظام تسجيل الدخول، حاول مرة أخرى بعد لحظة');
+    return;
+  }
+  try {
+    await fbApi.signInWithPopup(fbAuth, fbGoogleProvider);
+    showToast('تم تسجيل الدخول بنجاح');
+  } catch (err) {
+    const code = err?.code || '';
+    console.error('Website Google sign-in error:', code, err);
+    if (
+      code === 'auth/popup-blocked' ||
+      code === 'auth/operation-not-supported-in-this-environment'
+    ) {
+      try {
+        await fbApi.signInWithRedirect(fbAuth, fbGoogleProvider);
+        return;
+      } catch (redirErr) {
+        console.error('Redirect sign-in error:', redirErr);
+      }
+    }
+    if (code === 'auth/unauthorized-domain') {
+      showToast(
+        `أضف الدومين (${window.location.hostname}) داخل Firebase Authentication -> Authorized domains`,
+      );
+      return;
+    }
+    if (code === 'auth/popup-closed-by-user' || code === 'auth/cancelled-popup-request') {
+      showToast('تم إغلاق نافذة تسجيل الدخول');
+      return;
+    }
+    showToast(`تعذّر تسجيل الدخول (${code || 'تأكد من إعدادات Firebase'})`);
   }
 }
 
@@ -449,20 +587,35 @@ function openProductModal(entry) {
 // Wishlist & Viewed History (Local + Firestore sync when signed in)
 async function syncCustomerSummary() {
   if (!state.user || !fbDb || !fbApi) return;
+  const ref = fbApi.doc(fbDb, 'customers', state.user.uid);
+  const safeName = String(
+    state.user.displayName || state.user.email?.split('@')[0] || 'عميل نيو لايف',
+  ).slice(0, 120);
+  const safeEmail = String(state.user.email || '').slice(0, 160);
+  const safePhoto = String(state.user.photoURL || '').slice(0, 500);
   try {
-    await fbApi.setDoc(
-      fbApi.doc(fbDb, 'customers', state.user.uid),
-      {
+    const snap = await fbApi.getDoc(ref);
+    if (!snap.exists()) {
+      await fbApi.setDoc(ref, {
         uid: state.user.uid,
-        displayName: state.user.displayName || 'عميل',
-        email: state.user.email || '',
-        photoURL: state.user.photoURL || '',
+        displayName: safeName,
+        email: safeEmail,
+        photoURL: safePhoto,
+        wishlistCount: state.wishlist.length,
+        viewedCount: state.viewedHistory.length,
+        createdAt: fbApi.serverTimestamp(),
+        lastActiveAt: fbApi.serverTimestamp(),
+      });
+    } else {
+      await fbApi.updateDoc(ref, {
+        displayName: safeName,
+        email: safeEmail,
+        photoURL: safePhoto,
         wishlistCount: state.wishlist.length,
         viewedCount: state.viewedHistory.length,
         lastActiveAt: fbApi.serverTimestamp(),
-      },
-      { merge: true },
-    );
+      });
+    }
   } catch {
     // Ignore
   }
@@ -470,19 +623,33 @@ async function syncCustomerSummary() {
 
 async function toggleWishlist(groupId, groupTitle, product) {
   const id = productKey(groupId, product);
+  const docId = toDocId(`${groupId}::${product.title}`);
   const exists = state.wishlist.some((w) => productKey(w.groupId, w.product) === id);
   if (exists) {
     state.wishlist = state.wishlist.filter((w) => productKey(w.groupId, w.product) !== id);
     showToast('تمت الإزالة من قائمتك والمفضلة');
     if (state.user && fbDb && fbApi) {
-      fbApi.deleteDoc(fbApi.doc(fbDb, 'customers', state.user.uid, 'wishlist', toDocId(id))).catch(() => {});
+      fbApi
+        .deleteDoc(fbApi.doc(fbDb, 'customers', state.user.uid, 'wishlist', docId))
+        .catch(() => {});
     }
   } else {
     const entry = { groupId, groupTitle, product, addedAt: Date.now() };
     state.wishlist.unshift(entry);
     showToast('تمت الإضافة لقائمتك والمفضلة');
     if (state.user && fbDb && fbApi) {
-      fbApi.setDoc(fbApi.doc(fbDb, 'customers', state.user.uid, 'wishlist', toDocId(id)), entry).catch(() => {});
+      fbApi
+        .setDoc(fbApi.doc(fbDb, 'customers', state.user.uid, 'wishlist', docId), {
+          uid: state.user.uid,
+          groupId: String(groupId).slice(0, 64),
+          groupTitle: String(groupTitle).slice(0, 120),
+          title: String(product.title).slice(0, 200),
+          desc: String(product.desc || '').slice(0, 2500),
+          img: String(product.img || '').slice(0, 1000),
+          orderName: String(product.orderName || product.title).slice(0, 200),
+          createdAt: fbApi.serverTimestamp(),
+        })
+        .catch(() => {});
     }
   }
   saveLocal('nl_wishlist', state.wishlist);
@@ -492,8 +659,9 @@ async function toggleWishlist(groupId, groupTitle, product) {
   void syncCustomerSummary();
 }
 
-function recordView(entry) {
+async function recordView(entry) {
   const id = productKey(entry.groupId, entry.product);
+  const docId = toDocId(`${entry.groupId}::${entry.product.title}`);
   const item = {
     groupId: entry.groupId,
     groupTitle: entry.groupTitle,
@@ -506,8 +674,37 @@ function recordView(entry) {
   ].slice(0, 30);
   saveLocal('nl_viewed', state.viewedHistory);
   if (state.user && fbDb && fbApi) {
-    fbApi.setDoc(fbApi.doc(fbDb, 'customers', state.user.uid, 'viewedHistory', toDocId(id)), item).catch(() => {});
-    void syncCustomerSummary();
+    try {
+      const ref = fbApi.doc(fbDb, 'customers', state.user.uid, 'viewedHistory', docId);
+      const snap = await fbApi.getDoc(ref);
+      const payloadBase = {
+        groupId: String(entry.groupId).slice(0, 64),
+        groupTitle: String(entry.groupTitle).slice(0, 120),
+        title: String(entry.product.title).slice(0, 200),
+        desc: String(entry.product.desc || '').slice(0, 2500),
+        img: String(entry.product.img || '').slice(0, 1000),
+        orderName: String(entry.product.orderName || entry.product.title).slice(0, 200),
+      };
+      if (!snap.exists()) {
+        await fbApi.setDoc(ref, {
+          uid: state.user.uid,
+          ...payloadBase,
+          viewCount: 1,
+          firstViewedAt: fbApi.serverTimestamp(),
+          lastViewedAt: fbApi.serverTimestamp(),
+        });
+      } else {
+        const prevCount = Number(snap.data()?.viewCount) || 1;
+        await fbApi.updateDoc(ref, {
+          ...payloadBase,
+          viewCount: prevCount + 1,
+          lastViewedAt: fbApi.serverTimestamp(),
+        });
+      }
+      void syncCustomerSummary();
+    } catch {
+      // Ignore
+    }
   }
 }
 
@@ -544,12 +741,7 @@ function renderAccount() {
         <button type="button" id="loginGoogleBtn" class="btn btn-navy">تسجيل الدخول بـ Google</button>
       </div>`;
     document.getElementById('loginGoogleBtn').onclick = () => {
-      if (!fbAuth || !fbApi || !fbGoogleProvider) {
-        return showToast('تسجيل الدخول يعمل عند رفع الموقع على الإنترنت');
-      }
-      return fbApi
-        .signInWithPopup(fbAuth, fbGoogleProvider)
-        .catch(() => showToast('تعذّر تسجيل الدخول — تأكد من إضافة الدومين في Firebase'));
+      void signInWithGoogleWebsite();
     };
   }
 
@@ -862,14 +1054,26 @@ function renderOwnerProducts() {
         if (fsExisting && !state.websiteGroups.some((g) => g.products.some((p) => `${g.id}::${normalizeArabic(p.title)}` === targetKey))) {
           await fbApi.deleteDoc(fbApi.doc(fbDb, 'products', fsExisting.id));
         } else {
-          await fbApi.setDoc(fbApi.doc(fbDb, 'products', toDocId(targetKey)), {
-            targetKey,
+          const entry = findProductEntry(btn.dataset.delGid, btn.dataset.delTitle);
+          const ref = fbApi.doc(fbDb, 'products', toDocId(targetKey));
+          const existingSnap = await fbApi.getDoc(ref);
+          const prodPayload = {
+            targetKey: targetKey.slice(0, 280),
             groupId: btn.dataset.delGid,
             groupTitle: CATEGORY_SHORT[btn.dataset.delGid] || 'منتجات المعرض',
-            title: btn.dataset.delTitle,
+            title: String(btn.dataset.delTitle || '').slice(0, 200),
+            desc: String(entry?.product.desc || '').slice(0, 2500),
+            img: String(entry?.product.img || './Logo.png').slice(0, 1000),
+            orderName: String(entry?.product.orderName || btn.dataset.delTitle || '').slice(0, 200),
+            source: 'website',
             hidden: true,
             updatedAt: fbApi.serverTimestamp(),
-          });
+          };
+          if (!existingSnap.exists()) {
+            await fbApi.setDoc(ref, { ...prodPayload, createdAt: fbApi.serverTimestamp() });
+          } else {
+            await fbApi.updateDoc(ref, prodPayload);
+          }
         }
         showToast('تم حذف الصنف بنجاح');
       } catch {
@@ -914,9 +1118,9 @@ async function loadCustomers() {
         detail.innerHTML = `
           <h3 style="margin:0 0 10px; font-size:15px">تفاصيل العميل</h3>
           <p style="font-size:12px; font-weight:700">المفضلة (${wSnap.size}):</p>
-          <ul style="font-size:12px; color:var(--muted)">${wSnap.docs.map((d) => `<li>${escapeHtml(d.data().product?.title || '')}</li>`).join('')}</ul>
+          <ul style="font-size:12px; color:var(--muted)">${wSnap.docs.map((d) => `<li>${escapeHtml(d.data().title || d.data().product?.title || '')}</li>`).join('')}</ul>
           <p style="font-size:12px; font-weight:700; margin-top:12px">سجل المشاهدات (${vSnap.size}):</p>
-          <ul style="font-size:12px; color:var(--muted)">${vSnap.docs.map((d) => `<li>${escapeHtml(d.data().product?.title || '')}</li>`).join('')}</ul>
+          <ul style="font-size:12px; color:var(--muted)">${vSnap.docs.map((d) => `<li>${escapeHtml(d.data().title || d.data().product?.title || '')}</li>`).join('')}</ul>
         `;
       };
     });
@@ -1053,12 +1257,7 @@ function bindEvents() {
   });
 
   document.getElementById('ownerLoginBtn').addEventListener('click', () => {
-    if (!fbAuth || !fbApi || !fbGoogleProvider) {
-      return showToast('تسجيل دخول المالك يتطلب فتح الموقع عبر رابط استضافة (مثل GitHub Pages)');
-    }
-    return fbApi
-      .signInWithPopup(fbAuth, fbGoogleProvider)
-      .catch(() => showToast('تعذّر تسجيل الدخول — تأكد من إضافة الدومين في Firebase'));
+    void signInWithGoogleWebsite();
   });
 
   document.getElementById('ownerTabProducts').addEventListener('click', () => {
@@ -1096,19 +1295,26 @@ function bindEvents() {
     const targetKey = editTarget || `${groupId}::${normalizeArabic(title)}`;
 
     try {
-      await fbApi.setDoc(fbApi.doc(fbDb, 'products', toDocId(targetKey)), {
-        targetKey,
+      const ref = fbApi.doc(fbDb, 'products', toDocId(targetKey));
+      const existingSnap = await fbApi.getDoc(ref);
+      const prodPayload = {
+        targetKey: targetKey.slice(0, 280),
         groupId,
         groupTitle: CATEGORY_SHORT[groupId] || 'منتجات المعرض',
-        title,
-        desc,
-        img,
-        badge,
-        orderName: title,
+        title: title.slice(0, 200),
+        desc: desc.slice(0, 2500),
+        img: img.slice(0, 1000),
+        badge: badge.slice(0, 40),
+        orderName: title.slice(0, 200),
         hidden: false,
-        source: 'admin',
+        source: editTarget ? 'website' : 'admin',
         updatedAt: fbApi.serverTimestamp(),
-      });
+      };
+      if (!existingSnap.exists()) {
+        await fbApi.setDoc(ref, { ...prodPayload, createdAt: fbApi.serverTimestamp() });
+      } else {
+        await fbApi.updateDoc(ref, prodPayload);
+      }
       e.target.reset();
       document.getElementById('ownerEditTargetKey').value = '';
       document.getElementById('ownerFormHeading').textContent = 'إضافة صنف جديد';
@@ -1131,5 +1337,5 @@ initTicker();
 bindEvents();
 updateWishBadges();
 void fetchBaseCatalog();
-void initFirebaseAndSync();
+firebaseInitPromise = initFirebaseAndSync();
 void fetchReviews();
